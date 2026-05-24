@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpBuffer = false;
     private int airTime = 0;
     private Vector2 groundCheckSize = new Vector2(0.95f, 1f);
-    private int health = 1000;
 
     public HealthBar healthBarRef;
 
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (DamageCheck())
         {
-            healthBarRef.UpdateHealth(-1f);
+            healthBarRef.UpdateHealth(-1);
         }
 
         if (Input.GetKeyDown(KeyCode.R)) {
