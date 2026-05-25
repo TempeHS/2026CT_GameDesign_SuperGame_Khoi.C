@@ -1195,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ea7f14ca19cf41bf58aba46676bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSystemRef: {fileID: 1598524888}
   rb: {fileID: 1472673787}
   groundCheck: {fileID: 1379929326}
   jumpBufferCheck: {fileID: 1371322447}
@@ -1423,6 +1424,7 @@ GameObject:
   - component: {fileID: 1598524886}
   - component: {fileID: 1598524885}
   - component: {fileID: 1598524884}
+  - component: {fileID: 1598524888}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1513,6 +1515,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1598524888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598524883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4741e313cb26a46ab804ab68bc1a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 0
+  heart: {fileID: 6441521541101865737, guid: fcea053a94bd3334fa55f30d7214f9ec, type: 3}
+  healthContainer: {fileID: 1569946284}
 --- !u!1 &1662829534
 GameObject:
   m_ObjectHideFlags: 0
