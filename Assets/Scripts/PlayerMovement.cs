@@ -11,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private int airTime = 0;
     private Vector2 groundCheckSize = new Vector2(0.95f, 1f);
 
-    public HealthBar healthBarRef;
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform jumpBufferCheck;
@@ -49,11 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             jumpBuffer = false;
-        }
-
-        if (DamageCheck())
-        {
-            healthBarRef.UpdateHealth(-1);
         }
 
         if (Input.GetKeyDown(KeyCode.R)) {
