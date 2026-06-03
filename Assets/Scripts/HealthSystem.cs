@@ -35,7 +35,6 @@ public class HealthSystem : MonoBehaviour
                 health  -= 1;
                 timer = 2f;
                 DisplayHearts();
-                Debug.Log(health);
             }
         }
     }
