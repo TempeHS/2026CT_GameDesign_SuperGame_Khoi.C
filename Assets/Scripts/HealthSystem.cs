@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -29,13 +30,19 @@ public class HealthSystem : MonoBehaviour
     
     public void DealDamage()
     {
-        if (health > 0)
+        if (health > 0 && timer <= 0f)
         {
-            if (timer <= 0f) {
-                health  -= 1;
-                timer = 2f;
-                DisplayHearts();
+            health -= 1;
+            timer = 2f;
+
+            // Play animation on the heart that was just lost
+            Animator anim = hearts[health].GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("HeartTrigger"); // make sure this trigger exists in Animator
             }
+
+            DisplayHearts();
         }
     }
 
@@ -43,6 +50,11 @@ public class HealthSystem : MonoBehaviour
     {
         if (timer > 0f) {
             timer -= Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.F))
+        {
+            Debug.Log("you pressed F");
+            DealDamage();
         }
     }
 
@@ -54,12 +66,18 @@ public class HealthSystem : MonoBehaviour
 
             if (i < health)
             {
-                // Full heart → normal color (white)
                 img.color = Color.white;
-            } else {
-                // Empty heart → black
-                img.color = new Color32(50, 50, 50, 255);
             }
+            else
+            {
+                img.color = Color.black;
+            }
+        }
+
+        if (health >= 0 && health < hearts.Count)
+        {
+            Animator anim = hearts[health].GetComponent<Animator>();
+            anim.SetTrigger("HeartTrigger");
         }
     }
 }

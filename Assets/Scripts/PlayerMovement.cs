@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
             speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
         }
 
-        Debug.Log(speedX);
-
         if (!IsGrounded())
         {
             airTime += 1;

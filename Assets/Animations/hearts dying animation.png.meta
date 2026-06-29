@@ -433,6 +433,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: hearts dying animation_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb84fdb533a96f44948490d8c95118a
+      internalID: 1467562754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hearts dying animation_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463ebc303485dd842b62eb795509a2ce
+      internalID: -235569072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hearts dying animation_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2600bbae9acc7a449b716bdc755e00f7
+      internalID: -1805051679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -449,6 +515,8 @@ TextureImporter:
     nameFileIdTable:
       hearts dying animation_0: -5846803237434196463
       hearts dying animation_1: 1118637356388380662
+      hearts dying animation_10: -235569072
+      hearts dying animation_11: -1805051679
       hearts dying animation_2: 8573112516598534783
       hearts dying animation_3: -7597887689265310768
       hearts dying animation_4: 5066244959412643082
@@ -456,6 +524,7 @@ TextureImporter:
       hearts dying animation_6: -7140351653217990083
       hearts dying animation_7: -3407386825100777224
       hearts dying animation_8: 4998328750639623014
+      hearts dying animation_9: 1467562754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
