@@ -10,6 +10,7 @@ public class HealthSystem : MonoBehaviour
     public int health;
     public GameObject heart;
     public GameObject healthContainer;
+    public GameObject healthContainerTrans;
     
     private float timer = 0f;
 
@@ -18,6 +19,16 @@ public class HealthSystem : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        
+        for (int i = 0; i < maxHealth; i++)
+        {
+            GameObject heartChild = Instantiate(heart);
+            heartChild.transform.SetParent(healthContainerTrans.transform);
+            Image img = heartChild.GetComponent<Image>();
+            img.color = new Color32(255, 255, 255, 150);
+            hearts.Add(heartChild);
+        }
+        
         for (int i = 0; i < maxHealth; i++)
         {
             GameObject heartChild = Instantiate(heart);
@@ -46,7 +57,7 @@ public class HealthSystem : MonoBehaviour
             health -= 1;
             timer = 2f;
 
-            Animator anim = hearts[health].GetComponent<Animator>();
+            Animator anim = hearts[maxHealth + health].GetComponent<Animator>();
             if (anim != null)
                 anim.SetTrigger("HeartTrigger");
 
@@ -56,10 +67,9 @@ public class HealthSystem : MonoBehaviour
 
     private void DisplayHearts()
     {
-        for (int i = 0; i < hearts.Count; i++)
+        for (int i = 0; i < maxHealth; i++)
         {
-            Image img = hearts[i].GetComponent<Image>();
-            img.color = (i < health) ? Color.white : Color.black;
+            Image img = hearts[maxHealth + i].GetComponent<Image>();
         }
     }
 }
