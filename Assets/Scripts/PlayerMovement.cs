@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && (IsGrounded() || airTime < 50 && rb.linearVelocity.y < 0f))
+        if (Input.GetButtonDown("Jump") && (IsGrounded() || airTime < 25 && rb.linearVelocity.y < 0f))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
         }
