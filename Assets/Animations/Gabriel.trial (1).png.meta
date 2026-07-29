@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 00020d9acc41e024894ce73f92384ad2
+guid: af5f733b5384a34408d90ab68934dfcf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8957324059118975939
-    second: images_0
+      213: 1404242182101924727
+    second: Gabriel.trial (1)_0
+  - first:
+      213: 7391220117929037937
+    second: Gabriel.trial (1)_1
+  - first:
+      213: 1929243603672457458
+    second: Gabriel.trial (1)_2
+  - first:
+      213: -6166764060824144285
+    second: Gabriel.trial (1)_3
+  - first:
+      213: -6821773396983511064
+    second: Gabriel.trial (1)_4
+  - first:
+      213: 313230449658877803
+    second: Gabriel.trial (1)_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +63,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,13 +167,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images_0
+      name: Gabriel.trial (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 350
-        height: 214
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +182,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3cbb8d916cece4c70800000000000000
-      internalID: 8957324059118975939
+      spriteID: 77bfdca13dedc7310800000000000000
+      internalID: 1404242182101924727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gabriel.trial (1)_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17091e17983e29660800000000000000
+      internalID: 7391220117929037937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gabriel.trial (1)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0671206dc06ca10800000000000000
+      internalID: 1929243603672457458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gabriel.trial (1)_3
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3667ee472c04b6aa0800000000000000
+      internalID: -6166764060824144285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gabriel.trial (1)_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7869e1d313451a0800000000000000
+      internalID: -6821773396983511064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gabriel.trial (1)_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67d0c43f61d85400800000000000000
+      internalID: 313230449658877803
       vertices: []
       indices: 
       edges: []
@@ -177,7 +302,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 82db88a9c9778f343bbe1239709f0714
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +312,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      images_0: 8957324059118975939
+      Gabriel.trial (1)_0: 1404242182101924727
+      Gabriel.trial (1)_1: 7391220117929037937
+      Gabriel.trial (1)_2: 1929243603672457458
+      Gabriel.trial (1)_3: -6166764060824144285
+      Gabriel.trial (1)_4: -6821773396983511064
+      Gabriel.trial (1)_5: 313230449658877803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

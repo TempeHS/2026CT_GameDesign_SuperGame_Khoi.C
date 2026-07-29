@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpBuffer = false;
     private int airTime = 0;
     private Vector2 groundCheckSize = new Vector2(0.95f, 1f);
+    private float ySpeed;
 
     private bool isKB = false;
 
@@ -22,9 +23,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform jumpBufferCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private Animator animator;
 
     void Update()
     {
+        ySpeed = rb.linearVelocity.y;
+
         if (isKB == false)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
@@ -37,25 +41,27 @@ public class PlayerMovement : MonoBehaviour
             airTime += 1;
         } else {
             airTime = 0;
-            if (rb.linearVelocity.y < 0.1f)
+            if (ySpeed < 0.1f)
             {
                isKB = false; 
             }
         }
 
-        if (Input.GetButtonDown("Jump") && (IsGrounded() || airTime < 25 && rb.linearVelocity.y < 0f))
+        Debug.Log(Input.GetButton("Jump"));
+
+        if(Input.GetButtonDown("Jump") && (IsGrounded() || (airTime < 25 && ySpeed < 0f)))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        }
-
-        if (Input.GetButtonDown("Jump") && CanJumpBuffer() && rb.linearVelocity.y < 0f)
+        if (Input.GetButtonDown("Jump") && CanJumpBuffer() && ySpeed < 0f)
         {
             jumpBuffer = true;
+        }
+
+        if (Input.GetButtonUp("Jump") && ySpeed > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
         if (jumpBuffer == true && IsGrounded())
@@ -67,6 +73,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             transform.position = new Vector2(0f, 0f);
+        }
+
+        animator.SetFloat("PlayerSpeed", Mathf.Abs(speedX));
+        animator.SetFloat("PlayerSpeedY", ySpeed);
+        if (airTime > 0)
+        {
+            animator.SetBool("PlayerInAir?", true);
+        } else {
+            animator.SetBool("PlayerInAir?", false);
         }
 
         Flip();
@@ -104,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float finalYVelocity = Mathf.Min(rb.linearVelocity.y, 50f);
+        float finalYVelocity = Mathf.Min(ySpeed, 50f);
         rb.linearVelocity = new Vector2(speedX, finalYVelocity);
 
         if (isKB)
@@ -115,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speedX = Mathf.MoveTowards(speedX, 0f, 40f * Time.fixedDeltaTime);
         }
+
     }
 
     private bool IsGrounded()
