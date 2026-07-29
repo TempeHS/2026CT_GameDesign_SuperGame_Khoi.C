@@ -6,17 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speedX = 0f;
-    private float maxSpeed = 8f;
+    private float maxSpeed = 6f;
     private float jumpPower = 16f;
     private bool isFacingRight = true;
     private bool jumpBuffer = false;
     private int airTime = 0;
-    private Vector2 groundCheckSize = new Vector2(0.95f, 1f);
-    private float ySpeed;
-
+    private Vector2 groundCheckSize = new Vector2(0.45f, 1f);
     private bool isKB = false;
 
     public HealthSystem healthSystemRef;
+    public ParticleSystem particleFX;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -27,58 +26,50 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        ySpeed = rb.linearVelocity.y;
 
-        if (isKB == false)
-        {
+        if (isKB == false) {
             horizontal = Input.GetAxisRaw("Horizontal");
             speedX += horizontal * 30f * Time.deltaTime; 
             speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
         }
 
-        if (!IsGrounded())
-        {
+        if (!IsGrounded()) {
             airTime += 1;
         } else {
             airTime = 0;
-            if (ySpeed < 0.1f)
-            {
+            if (rb.linearVelocity.y < 0.1f) {
                isKB = false; 
             }
         }
 
-        Debug.Log(Input.GetButton("Jump"));
-
-        if(Input.GetButtonDown("Jump") && (IsGrounded() || (airTime < 25 && ySpeed < 0f)))
-        {
+        if(Input.GetButtonDown("Jump") && IsGrounded()) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
         }
 
-        if (Input.GetButtonDown("Jump") && CanJumpBuffer() && ySpeed < 0f)
-        {
-            jumpBuffer = true;
-        }
-
-        if (Input.GetButtonUp("Jump") && ySpeed > 0f)
-        {
+        if(Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
-        if (jumpBuffer == true && IsGrounded())
-        {
+        if(Input.GetButtonDown("Jump") && CanJumpBuffer()) {
+            jumpBuffer = true;
+        }
+
+        if (jumpBuffer == true && IsGrounded()) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             jumpBuffer = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) 
-        {
+        if (Input.GetKeyDown(KeyCode.R)) {
             transform.position = new Vector2(0f, 0f);
         }
 
+        if (rb.linearVelocity.y < 0f){
+            particleFX.Play();
+        }
+
         animator.SetFloat("PlayerSpeed", Mathf.Abs(speedX));
-        animator.SetFloat("PlayerSpeedY", ySpeed);
-        if (airTime > 0)
-        {
+        animator.SetFloat("PlayerSpeedY", rb.linearVelocity.y);
+        if (airTime > 0) {
             animator.SetBool("PlayerInAir?", true);
         } else {
             animator.SetBool("PlayerInAir?", false);
@@ -89,8 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (DamageCheck() && !isKB)
-        {
+        if (DamageCheck() && !isKB) {
             healthSystemRef.DealDamage();
 
             Vector3 contactPoint = collision.GetContact(0).point;
@@ -119,39 +109,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float finalYVelocity = Mathf.Min(ySpeed, 50f);
+        float finalYVelocity = Mathf.Min(rb.linearVelocity.y, 50f);
         rb.linearVelocity = new Vector2(speedX, finalYVelocity);
 
-        if (isKB)
-        {
+        if (isKB) {
             speedX = Mathf.MoveTowards(speedX, 0f, 10f * Time.fixedDeltaTime);
-        }
-        else if (horizontal == 0f)
-        {
-            speedX = Mathf.MoveTowards(speedX, 0f, 40f * Time.fixedDeltaTime);
+        } else if (horizontal == 0f) {
+            speedX = Mathf.MoveTowards(speedX, 0f, 20f * Time.fixedDeltaTime);
         }
 
     }
 
-    private bool IsGrounded()
-    {
+    private bool IsGrounded() {
         return Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
     }
 
-    private bool CanJumpBuffer()
-    {
+    private bool CanJumpBuffer() {
         return Physics2D.OverlapBox(jumpBufferCheck.position, groundCheckSize, 0f, groundLayer);
     }
 
-    private bool DamageCheck()
-    {
+    private bool DamageCheck() {
         return Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, obstacleLayer);
     }
 
-    private void Flip()
-    {
+    private void Flip() {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
+            particleFX.Play();
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
