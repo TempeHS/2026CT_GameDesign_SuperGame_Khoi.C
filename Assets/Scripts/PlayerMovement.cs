@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool jumpBuffer = false;
     private int airTime = 0;
-    private Vector2 groundCheckSize = new Vector2(0.45f, 1f);
     private bool isKB = false;
 
     public HealthSystem healthSystemRef;
@@ -24,8 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private Animator animator;
 
-    void Update()
-    {
+    void Update() {
 
         if (isKB == false) {
             horizontal = Input.GetAxisRaw("Horizontal");
@@ -78,8 +76,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    void OnCollisionEnter2D(Collision2D collision) {
         if (DamageCheck() && !isKB) {
             healthSystemRef.DealDamage();
 
@@ -97,8 +94,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator KbTimer()
-    {
+    private IEnumerator KbTimer() {
         isKB = true;
         horizontal = 0f;
         
@@ -107,8 +103,9 @@ public class PlayerMovement : MonoBehaviour
         isKB = false;
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
+        CheckWall();
+
         float finalYVelocity = Mathf.Min(rb.linearVelocity.y, 50f);
         rb.linearVelocity = new Vector2(speedX, finalYVelocity);
 
@@ -117,19 +114,18 @@ public class PlayerMovement : MonoBehaviour
         } else if (horizontal == 0f) {
             speedX = Mathf.MoveTowards(speedX, 0f, 20f * Time.fixedDeltaTime);
         }
-
     }
 
     private bool IsGrounded() {
-        return Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+        return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 1.5f), 0f, groundLayer);
     }
 
     private bool CanJumpBuffer() {
-        return Physics2D.OverlapBox(jumpBufferCheck.position, groundCheckSize, 0f, groundLayer);
+        return Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.5f, 1.5f), 0f, groundLayer);
     }
 
     private bool DamageCheck() {
-        return Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, obstacleLayer);
+        return Physics2D.OverlapBox(transform.position, new Vector2(0.5f, 1.5f), 0f, obstacleLayer);
     }
 
     private void Flip() {
@@ -141,5 +137,20 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    private void CheckWall() {
+        if (speedX == 0) return;
+        
+        float direction = Mathf.Sign(speedX);
+        Vector2 checkPos = new Vector2(transform.position.x + direction * 0.3f, transform.position.y + 0.5f);
+
+        if (Physics2D.OverlapBox(checkPos, new Vector2(0.1f, 1f), 0f, groundLayer)) {
+            if (direction != 0 && horizontal != 0) {
+                speedX = 0f;
+                horizontal = 0f;
+            }
+        }
+        
     }
 }

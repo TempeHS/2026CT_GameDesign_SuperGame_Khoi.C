@@ -7,12 +7,12 @@ public class SmoothCameraMovement : MonoBehaviour
     private float offsetY;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        
         offsetX = player.transform.position.x - transform.position.x;
         offsetY = player.transform.position.y - transform.position.y;
 
-        transform.Translate(Vector3.right * offsetX*4 * Time.deltaTime);
-        transform.Translate(Vector3.up * offsetY*4 * Time.deltaTime);
+        transform.Translate(Vector3.right * offsetX*4f * Time.deltaTime);
+        transform.Translate(Vector3.up * offsetY*4f * Time.deltaTime);
     }
 }
