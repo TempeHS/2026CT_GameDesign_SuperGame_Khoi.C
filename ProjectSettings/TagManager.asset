@@ -45,7 +45,10 @@ TagManager:
   - name: 1Sky
     uniqueID: 1091106217
     locked: 0
-  - name: 2Background
+  - name: 2BackgroundII
+    uniqueID: 2367318047
+    locked: 0
+  - name: 3Background
     uniqueID: 945614309
     locked: 0
   - name: Scene

@@ -14,7 +14,7 @@ public class BGController : MonoBehaviour
         Debug.Log(startPos);
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         float distance = cam.transform.position.x * parallaxEffect;
         float movement = cam.transform.position.x * (1 - parallaxEffect);
