@@ -45,17 +45,23 @@ TagManager:
   - name: 1Sky
     uniqueID: 1091106217
     locked: 0
-  - name: 2BackgroundII
+  - name: 2BackgroundBehind
     uniqueID: 2367318047
     locked: 0
   - name: 3Background
     uniqueID: 945614309
+    locked: 0
+  - name: 4Midground
+    uniqueID: 971615651
     locked: 0
   - name: Scene
     uniqueID: 1540136441
     locked: 0
   - name: Player
     uniqueID: 3030355809
+    locked: 0
+  - name: 5Foreground
+    uniqueID: 1832942129
     locked: 0
   m_RenderingLayers:
   - Default
