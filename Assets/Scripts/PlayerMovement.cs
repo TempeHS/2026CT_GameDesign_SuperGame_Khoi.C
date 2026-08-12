@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool CanJumpBuffer() {
-        return Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.5f, 1.5f), 0f, groundLayer);
+        return Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.45f, 1.5f), 0f, groundLayer);
     }
 
     private bool DamageCheck() {
