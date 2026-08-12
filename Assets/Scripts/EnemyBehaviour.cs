@@ -7,24 +7,38 @@ public class EnemyBehaviour : MonoBehaviour
     private float maxSpeed = 4f;
     private float jumpPower = 12f;
     private bool isFacingRight = true;
+    private Animator animator;
+    private float jumpTimer;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask obstacleLayer;
-    [SerializeField] private Animator animator;
+    [SerializeField] private LayerMask playerLayer; 
+    [SerializeField] private float jumpInterval = 2f;
 
-    // Update is called once per frame
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+        jumpTimer = jumpInterval;
+    }
+
     void Update()
     {
         speedX += horizontal * 30f * Time.deltaTime; 
         speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
 
         if(IsGrounded()) {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+            jumpTimer -= Time.deltaTime;
+            if (jumpTimer <= 0f) {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+                jumpTimer = jumpInterval;
+            }
         }
 
         Flip();
+
+        animator.SetFloat("SpeedY", rb.linearVelocity.y);
+        animator.SetBool("InAir", !IsGrounded());
     }
 
     private void FixedUpdate() {
@@ -32,9 +46,6 @@ public class EnemyBehaviour : MonoBehaviour
 
         float finalYVelocity = Mathf.Min(rb.linearVelocity.y, 50f);
         rb.linearVelocity = new Vector2(speedX, finalYVelocity);
-        if (horizontal == 0f) {
-            speedX = Mathf.MoveTowards(speedX, 0f, 20f * Time.fixedDeltaTime);
-        }
     }
 
     private void CheckWall() {
@@ -63,5 +74,5 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool IsGrounded() {
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.7f, 0.2f), 0f, groundLayer);
-    }
+    }   
 }

@@ -393,9 +393,9 @@ GameObject:
   - component: {fileID: 196662301}
   - component: {fileID: 196662300}
   - component: {fileID: 196662304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -563,10 +563,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  obstacleLayer:
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 128
-  animator: {fileID: 0}
+    m_Bits: 0
+  jumpInterval: 2
 --- !u!1 &417666896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12128,7 +12128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189389135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: JumpBufferCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12159,7 +12159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246126607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12700,7 +12700,7 @@ GameObject:
   - component: {fileID: 1480876866}
   - component: {fileID: 1480876868}
   - component: {fileID: 1480876867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyAnimations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
