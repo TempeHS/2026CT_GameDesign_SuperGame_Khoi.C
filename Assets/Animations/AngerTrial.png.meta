@@ -1,46 +1,40 @@
 fileFormatVersion: 2
-guid: b15e0a97e8ba083429a6c4e418f9ca8c
+guid: c7029fd2ed4c0ce4785b336af48a47f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3763752930381237044
-    second: New Piskel (2)_0
+      213: -749161025858658436
+    second: AngerTrial_0
   - first:
-      213: -445332791505162358
-    second: New Piskel (2)_1
+      213: 6410359689985155105
+    second: AngerTrial_1
   - first:
-      213: 109718205546589128
-    second: New Piskel (2)_2
+      213: -8008066223156406146
+    second: AngerTrial_2
   - first:
-      213: -8637498362619983186
-    second: New Piskel (2)_3
+      213: -5371554856328361218
+    second: AngerTrial_3
   - first:
-      213: -1639124903628890771
-    second: New Piskel (2)_4
+      213: -5186141516643932370
+    second: AngerTrial_4
   - first:
-      213: -5794501693467541010
-    second: New Piskel (2)_5
+      213: 7941346171753103219
+    second: AngerTrial_5
   - first:
-      213: 734891649374728833
-    second: New Piskel (2)_6
+      213: -8903636948330125412
+    second: AngerTrial_6
   - first:
-      213: 4282785891962925040
-    second: New Piskel (2)_7
+      213: 1465564157550652910
+    second: AngerTrial_7
   - first:
-      213: -4562832033278822378
-    second: New Piskel (2)_8
+      213: -7886781530014973309
+    second: AngerTrial_8
   - first:
-      213: 2625567014080777165
-    second: New Piskel (2)_9
+      213: -6223360718173162276
+    second: AngerTrial_9
   - first:
-      213: -6083270854300872640
-    second: New Piskel (2)_10
-  - first:
-      213: 4030267468922091137
-    second: New Piskel (2)_11
-  - first:
-      213: -228142917924625658
-    second: New Piskel (2)_12
+      213: -3535372364729973491
+    second: AngerTrial_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,10 +78,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,33 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -158,43 +126,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel (2)_0
+      name: AngerTrial_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 1059
-        width: 202
-        height: 132
+        x: 0
+        y: 960
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43b85b559598b3430800000000000000
-      internalID: 3763752930381237044
+      spriteID: c7f902624027a95f0800000000000000
+      internalID: -749161025858658436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_1
+      name: AngerTrial_1
       rect:
         serializedVersion: 2
-        x: 379
-        y: 1059
-        width: 202
-        height: 132
+        x: 320
+        y: 960
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8f60838f2cd1d9f0800000000000000
-      internalID: -445332791505162358
+      spriteID: 1206c0cac2c26f850800000000000000
+      internalID: 6410359689985155105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_2
+      name: AngerTrial_2
       rect:
         serializedVersion: 2
-        x: 699
-        y: 1059
-        width: 202
-        height: 132
+        x: 640
+        y: 960
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8cb6ffa602cc58100800000000000000
-      internalID: 109718205546589128
+      spriteID: e7855f6d232add090800000000000000
+      internalID: -8008066223156406146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_3
+      name: AngerTrial_3
       rect:
         serializedVersion: 2
-        x: 1019
-        y: 1049
-        width: 202
-        height: 152
+        x: 0
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eaa840ca001712880800000000000000
-      internalID: -8637498362619983186
+      spriteID: efa060161576475b0800000000000000
+      internalID: -5371554856328361218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_4
+      name: AngerTrial_4
       rect:
         serializedVersion: 2
-        x: 59
-        y: 719
-        width: 202
-        height: 172
+        x: 320
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6d14b8a598a049e0800000000000000
-      internalID: -1639124903628890771
+      spriteID: e27688994cf1708b0800000000000000
+      internalID: -5186141516643932370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_5
+      name: AngerTrial_5
       rect:
         serializedVersion: 2
-        x: 379
-        y: 719
-        width: 202
-        height: 172
+        x: 640
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee1c77e096bc59fa0800000000000000
-      internalID: -5794501693467541010
+      spriteID: 37f70c5a444553e60800000000000000
+      internalID: 7941346171753103219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_6
+      name: AngerTrial_6
       rect:
         serializedVersion: 2
-        x: 699
-        y: 719
-        width: 202
-        height: 172
+        x: 0
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 182b16dbf0cd23a00800000000000000
-      internalID: 734891649374728833
+      spriteID: c976db57e5def6480800000000000000
+      internalID: -8903636948330125412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_7
+      name: AngerTrial_7
       rect:
         serializedVersion: 2
-        x: 1019
-        y: 729
-        width: 202
-        height: 152
+        x: 320
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ff218bd3138f6b30800000000000000
-      internalID: 4282785891962925040
+      spriteID: eede95e16dab65410800000000000000
+      internalID: 1465564157550652910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_8
+      name: AngerTrial_8
       rect:
         serializedVersion: 2
-        x: 59
-        y: 419
-        width: 202
-        height: 132
+        x: 640
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61874aec0709da0c0800000000000000
-      internalID: -4562832033278822378
+      spriteID: 38288520cf58c8290800000000000000
+      internalID: -7886781530014973309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_9
+      name: AngerTrial_9
       rect:
         serializedVersion: 2
-        x: 379
-        y: 419
-        width: 202
-        height: 112
+        x: 0
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dcb8448d943ef6420800000000000000
-      internalID: 2625567014080777165
+      spriteID: cd43b2c466e22a9a0800000000000000
+      internalID: -6223360718173162276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_10
+      name: AngerTrial_10
       rect:
         serializedVersion: 2
-        x: 699
-        y: 419
-        width: 202
-        height: 132
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,52 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 040d8e87361e39ba0800000000000000
-      internalID: -6083270854300872640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (2)_11
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 419
-        width: 202
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 186f9e2e8e26ee730800000000000000
-      internalID: 4030267468922091137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (2)_12
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 99
-        width: 202
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 603e413993975dcf0800000000000000
-      internalID: -228142917924625658
+      spriteID: d058983c095dfeec0800000000000000
+      internalID: -3535372364729973491
       vertices: []
       indices: 
       edges: []
@@ -477,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ea9880f78958c294e8efcd37489cd535
     internalID: 0
     vertices: []
     indices: 
@@ -487,19 +385,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel (2)_0: 3763752930381237044
-      New Piskel (2)_1: -445332791505162358
-      New Piskel (2)_10: -6083270854300872640
-      New Piskel (2)_11: 4030267468922091137
-      New Piskel (2)_12: -228142917924625658
-      New Piskel (2)_2: 109718205546589128
-      New Piskel (2)_3: -8637498362619983186
-      New Piskel (2)_4: -1639124903628890771
-      New Piskel (2)_5: -5794501693467541010
-      New Piskel (2)_6: 734891649374728833
-      New Piskel (2)_7: 4282785891962925040
-      New Piskel (2)_8: -4562832033278822378
-      New Piskel (2)_9: 2625567014080777165
+      AngerTrial_0: -749161025858658436
+      AngerTrial_1: 6410359689985155105
+      AngerTrial_10: -3535372364729973491
+      AngerTrial_2: -8008066223156406146
+      AngerTrial_3: -5371554856328361218
+      AngerTrial_4: -5186141516643932370
+      AngerTrial_5: 7941346171753103219
+      AngerTrial_6: -8903636948330125412
+      AngerTrial_7: 1465564157550652910
+      AngerTrial_8: -7886781530014973309
+      AngerTrial_9: -6223360718173162276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

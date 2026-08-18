@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public HealthSystem healthSystemRef;
     public ParticleSystem particleFX;
+    public EnemyBehaviour enemyBehaviour; 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -92,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower * 0.7f);
                 
                 // Destroy the enemy game object (or call its death method)
-                Destroy(collision.gameObject);
+                enemyBehaviour.ParticleFX();
                 return; // Exit out early so the player doesn't take damage
             }
 

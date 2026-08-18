@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     private Animator animator;
     private float jumpTimer;
 
+    public ParticleSystem particleFX;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -27,13 +29,21 @@ public class EnemyBehaviour : MonoBehaviour
         speedX += horizontal * 30f * Time.deltaTime; 
         speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
 
+        if (rb.linearVelocity.y < 0f) {
+           animator.SetBool("PreJump", false);
+        }
+
         if(IsGrounded()) {
             jumpTimer -= Time.deltaTime;
             if (jumpTimer <= 0f) {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpTimer = jumpInterval;
+            } else if (jumpTimer <= 0.25f) {
+                animator.SetBool("PreJump", true);
             }
         }
+
+        
 
         Flip();
 
@@ -74,5 +84,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool IsGrounded() {
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.7f, 0.2f), 0f, groundLayer);
-    }   
+    }
+
+    public void ParticleFX() {
+        particleFX.Play();
+        Destroy(gameObject);
+    }
 }
