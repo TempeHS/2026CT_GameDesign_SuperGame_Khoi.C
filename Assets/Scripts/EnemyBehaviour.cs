@@ -87,6 +87,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     public void ParticleFX() {
+        particleFX.transform.position = gameObject.transform.position;
         particleFX.Play();
         Destroy(gameObject);
     }
