@@ -2,13 +2,13 @@
 
 | Field | Detail |
 |---|---|
-| **Game Title** | |
-| **Student Name(s)** | |
-| **Class / Course** | |
-| **Repository** | |
-| **Unity Version** | |
-| **Document Version** | |
-| **Date** | |
+| **Game Title** |IN=SOMNIA|
+| **Student Name(s)** |KhoiC|
+| **Class / Course** |10CT1 / Computer Technology|
+| **Repository** |https://github.com/TempeHS/2026CT_GameDesign_SuperGame_Khoi.C/tree/main|
+| **Unity Version** |6000.0.58f1|
+| **Document Version** |0.1|
+| **Date** |27/08/2026|
 
 ---
 
@@ -31,26 +31,26 @@
 ## 1. Game Overview
 
 ### 1.1 Genre
-
+Action
 
 ### 1.2 Target Audience
-
+People aged 13-24 years, as mental health is prominent in this age range.
 
 ### 1.3 Game Summary
-
+My game will be a 2D scrolling platformer that explores mental health issues. In the game, you will play as a person suffering from various mental health problems and you must explore their subconsciousness to help them. You must navigate through obstacles and puzzles to relieve mental strain on the character. The game should be in a pixel art style to represent the disconnection from reality, and its core mechanic is to explore your vices and resolve them.
 
 ### 1.4 Win / Loss Conditions
 | Condition | Description |
 |---|---|
-| Win | |
-| Loss | |
+| Win |Defeat the boss of the level.|
+| Loss |Lose all your hearts.|
 
 ### 1.5 Platform & Build Settings
 | Setting | Detail |
 |---|---|
-| Target Platform | |
-| Resolution | |
-| Build Type | |
+| Target Platform |Windows|
+| Resolution |1920x1080|
+| Build Type |Development|
 
 ---
 
@@ -89,9 +89,9 @@
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 | | | |
-| M-2 | | | |
-| M-3 | | | |
+| M-1 |Collect|Allows the player to collect orbs around the level|Orb: OrbController|
+| M-2 |Health|Health tracks the player's amount of lives.|Heart: HealthSystem|
+| M-3 |Enemy|Jumping on enemies allows you to defeat them| |
 | M-4 | | | |
 | M-5 | | | |
 
