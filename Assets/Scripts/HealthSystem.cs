@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class HealthSystem : MonoBehaviour
         {
             Debug.Log("you pressed F");
             DealDamage();
+        }
+
+        if (health == 0) {
+            SceneManager.LoadSceneAsync(1);
         }
     }
 
