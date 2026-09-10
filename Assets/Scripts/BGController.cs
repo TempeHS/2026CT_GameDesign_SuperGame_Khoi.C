@@ -15,7 +15,6 @@ public class BGController : MonoBehaviour
         startX = transform.position.x;
         startY = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-        AdjustToScreen();
     }
 
     void LateUpdate()
@@ -36,20 +35,5 @@ public class BGController : MonoBehaviour
         } else if (movement < startX - length) {
             startX -= length;
         }
-    }
-
-    void AdjustToScreen() {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        transform.localScale = Vector3.one;
-
-        float width = sprite.bounds.size.x;
-        
-        Camera camera = Camera.main;
-        float camHeight = camera.orthographicSize * 2f;
-        float camWidth = camHeight / Screen.height * Screen.width;
-
-        float scale = camWidth / width;
-
-        transform.localScale = new Vector3(scale, scale, 1f);
     }
 }
