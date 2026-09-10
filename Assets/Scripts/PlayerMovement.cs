@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isKB = false;
 
     public HealthSystem healthSystemRef;
-    public ParticleSystem particleFX;
+    public ParticleSystem walkFX;
+    public ParticleSystem hitFX;
     public EnemyBehaviour enemyBehaviour; 
 
     [SerializeField] private Rigidbody2D rb;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer sprite;
 
     void Update() {
 
@@ -63,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (rb.linearVelocity.y < 0f){
-            particleFX.Play();
+            walkFX.Play();
         }
 
         animator.SetFloat("PlayerSpeed", Mathf.Abs(speedX));
@@ -104,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             // - Touched sides/bottom of an enemy (isEnemy is true, but didn't trigger condition 1)
             // - Touched any general obstacle that isn't tagged "Enemy"
             healthSystemRef.DealDamage();
+            hitFX.Play();
 
             Vector3 contactPoint = collision.GetContact(0).point;
             float horizontalDirection = transform.position.x > contactPoint.x ? 1f : -1f;
@@ -122,10 +125,12 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator KbTimer() {
         isKB = true;
         horizontal = 0f;
+        sprite.color = new Color32(219, 61, 61, 255);
         
         yield return new WaitForSeconds(0.25f);
         
         isKB = false;
+        sprite.color = Color.white;
     }
 
     private void FixedUpdate() {
@@ -156,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
     private void Flip() {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            particleFX.Play();
+            walkFX.Play();
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
