@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public HealthSystem healthSystemRef;
     public ParticleSystem walkFX;
     public ParticleSystem hitFX;
-    public EnemyBehaviour enemyBehaviour; 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -80,31 +79,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        // Ensure the object hit belongs to your obstacleLayer mask
         if (((1 << collision.gameObject.layer) & obstacleLayer) != 0) {
             
             bool isEnemy = collision.gameObject.CompareTag("Enemy");
-
-            // Get the normal vector of the collision contact point
-            // Vector2.up (0, 1) means the collision happened on the bottom of the player (landing on top of the enemy)
             Vector2 contactNormal = collision.GetContact(0).normal;
 
-            // CONDITION 1: Player lands on top of an Enemy
             if (isEnemy && contactNormal.y > 0.5f) {
-                // Bounce the player upward slightly
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower * 0.7f);
-                
-                // Destroy the enemy game object (or call its death method)
-                enemyBehaviour.ParticleFX();
-                return; // Exit out early so the player doesn't take damage
+                EnemyBehaviour hitEnemy = collision.gameObject.GetComponent<EnemyBehaviour>();
+                hitEnemy.ParticleFX();
+                return;
             }
 
-            // If we are already in Knockback, ignore further damage checks
             if (isKB) return;
-
-            // CONDITION 2 & 3: 
-            // - Touched sides/bottom of an enemy (isEnemy is true, but didn't trigger condition 1)
-            // - Touched any general obstacle that isn't tagged "Enemy"
             healthSystemRef.DealDamage();
             hitFX.Play();
 
