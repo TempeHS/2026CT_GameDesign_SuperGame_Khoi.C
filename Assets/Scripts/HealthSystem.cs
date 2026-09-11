@@ -44,12 +44,6 @@ public class HealthSystem : MonoBehaviour
     {
         if (timer > 0f) timer -= Time.deltaTime;
 
-        if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            Debug.Log("you pressed F");
-            DealDamage();
-        }
-
         if (health == 0) {
             SceneManager.LoadSceneAsync(1);
         }

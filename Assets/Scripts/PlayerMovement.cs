@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector2(0f, 0f);
         }
 
-        if (rb.linearVelocity.y < 0f){
+        if (rb.linearVelocity.y < -1f){
             walkFX.Play();
         }
 
@@ -162,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             walkFX.Play();
+            Debug.Log("Flipped");
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;

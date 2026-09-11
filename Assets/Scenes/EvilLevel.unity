@@ -17715,8 +17715,10 @@ MonoBehaviour:
   musicSource: {fileID: 139235575}
   SFXSource: {fileID: 1294862477}
   WhitePalace: {fileID: 8300000, guid: 7497f43f61bc4b746974cef594f85aa3, type: 3}
+  Confined: {fileID: 8300000, guid: 05263572eeb514840ba27177e725ece0, type: 3}
   hover: {fileID: 8300000, guid: cda63f0ba8e92cc4d8f9087a8a0272f7, type: 3}
   click: {fileID: 8300000, guid: 935c6945eb97ab74b93c3116261e58be, type: 3}
+  music: {fileID: 8300000, guid: 05263572eeb514840ba27177e725ece0, type: 3}
 --- !u!4 &1167078502
 Transform:
   m_ObjectHideFlags: 0

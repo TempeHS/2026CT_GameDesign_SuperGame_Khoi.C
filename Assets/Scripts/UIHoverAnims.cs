@@ -13,12 +13,12 @@ public class UIHoverAnims : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     AudioManager audioManager;
 
-    void Start() {
-        startObjectScale = transform.localScale.x; 
-    }
-
     private void Awake() {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    void Start() {
+        startObjectScale = transform.localScale.x; 
     }
 
     void Update()
