@@ -4,7 +4,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     private float horizontal = 1f;
     private float speedX = 0f;
-    private float maxSpeed = 4f;
+    private float maxSpeed = 3f;
     private float jumpPower = 10f;
     private bool isFacingRight = true;
     private Animator animator;

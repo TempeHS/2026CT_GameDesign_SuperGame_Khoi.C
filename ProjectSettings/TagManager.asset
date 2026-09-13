@@ -17,7 +17,7 @@ TagManager:
   - Obstacle
   - Enemy
   - PostProcessing
-  - 
+  - OneWay
   - 
   - 
   - 
@@ -54,6 +54,9 @@ TagManager:
     locked: 0
   - name: 4Midground
     uniqueID: 971615651
+    locked: 0
+  - name: Obstacle
+    uniqueID: 1478933053
     locked: 0
   - name: Scene
     uniqueID: 1540136441

@@ -4,21 +4,42 @@ public class OrbController : MonoBehaviour
 {       
     private float yOffset;
     private float tick = 0f;
-    private float y;
+    private float startY;
+    private bool isVisible = false;
+    private GameObject player;
+    private Transform playerTransform;
+
+    [SerializeField] private float waveSpacing = 0.3f;
 
     void Start()
     {
-        y = transform.position.y;
+        startY = transform.position.y;
+
+        player = GameObject.FindWithTag("Player");
+        playerTransform = player.transform;
     }
 
     void Update()
     {
-        tick += 2.5f * Time.deltaTime;
-        yOffset = Mathf.Sin(tick);
+        if (isVisible == true) {
+            tick += 2.5f * Time.deltaTime;
+            float distanceOffset = Mathf.Abs(transform.position.x - playerTransform.position.x) * waveSpacing;
+            yOffset = Mathf.Sin(tick - distanceOffset);
 
-        transform.position = new Vector2(transform.position.x, y + yOffset * 0.2f); 
+            transform.position = new Vector2(transform.position.x, startY + yOffset * 0.2f); 
+        }
+    }
 
-        
+    private void OnBecameVisible()
+    {
+        isVisible = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        isVisible = false;
+        tick = 0f;
+        transform.position = new Vector2(transform.position.x, startY);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

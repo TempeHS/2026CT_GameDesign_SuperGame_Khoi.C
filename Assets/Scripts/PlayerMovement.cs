@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpBuffer = false;
     private int airTime = 0;
     private bool isKB = false;
+    private float timer = 0;
 
     public HealthSystem healthSystemRef;
     public ParticleSystem walkFX;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform jumpBufferCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private LayerMask oneWayLayer;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
         }
 
-        if (!IsGrounded()) {
+        if (!(IsGrounded() || OnOneWay())) {
             airTime += 1;
         } else {
             airTime = 0;
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonDown("Jump") && IsGrounded()) {
+        if(Input.GetButtonDown("Jump") && (IsGrounded() || OnOneWay())) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
         }
 
@@ -54,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             jumpBuffer = true;
         }
 
-        if (jumpBuffer == true && IsGrounded()) {
+        if (jumpBuffer == true && (IsGrounded() || OnOneWay())) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             jumpBuffer = false;
         }
@@ -73,6 +75,21 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("PlayerInAir?", true);
         } else {
             animator.SetBool("PlayerInAir?", false);
+        }
+
+        timer -= Time.deltaTime;
+
+        if (DamageCheck()) {
+            sprite.color = new Color32(219, 61, 61, 255);
+            maxSpeed = 4f;
+            if (timer < 0f) {
+                healthSystemRef.DealDamage();
+                hitFX.Play();
+                timer = 0.5f;
+            }
+        } else {
+            sprite.color = Color.white;
+            maxSpeed = 6f;
         }
 
         Flip();
@@ -137,6 +154,10 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 0.2f), 0f, groundLayer);
     }
 
+    private bool OnOneWay() {
+        return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 0.2f), 0f, oneWayLayer);
+    }
+
     private bool CanJumpBuffer() {
         return Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.45f, 1.5f), 0f, groundLayer);
     }
@@ -149,7 +170,6 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             walkFX.Play();
-            Debug.Log("Flipped");
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;

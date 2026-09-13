@@ -46,18 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
   m_LightType: 3
-  m_BlendStyleIndex: 1
+  m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.13252997, g: 1, b: 0, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.13252997, g: 1, b: 0, a: 0.6117647}
+  m_Intensity: 4
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000a9f508411f681a8de5ed5c38a3ade939f99dcc5b618f9fb4317a406d
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: 100
   m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
+  m_OverlapOperation: 1
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02889eb9812f9e64fa2f337b9a8e4bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSpacing: 0.2
 --- !u!61 &6548539964840562633
 BoxCollider2D:
   m_ObjectHideFlags: 0
