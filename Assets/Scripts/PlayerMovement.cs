@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
+    private float vertical;
     private float speedX = 0f;
     private float maxSpeed = 6f;
     private float jumpPower = 16f;
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private int airTime = 0;
     private bool isKB = false;
     private float timer = 0;
+    private bool isDropping = false;
+    private Collider2D playerCollider;
 
     public HealthSystem healthSystemRef;
     public ParticleSystem walkFX;
@@ -27,15 +30,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
+    void Start() {
+        playerCollider = GetComponent<Collider2D>();
+    }
+
     void Update() {
 
         if (isKB == false) {
             horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
             speedX += horizontal * 30f * Time.deltaTime; 
             speedX = Mathf.Clamp(speedX, -maxSpeed, maxSpeed);
         }
 
-        if (!(IsGrounded() || OnOneWay())) {
+        if (!(IsGrounded() || GetOneWayPlatform())) {
             airTime += 1;
         } else {
             airTime = 0;
@@ -44,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonDown("Jump") && (IsGrounded() || OnOneWay())) {
+        if(Input.GetButtonDown("Jump") && (IsGrounded() || GetOneWayPlatform())) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
         }
 
@@ -56,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             jumpBuffer = true;
         }
 
-        if (jumpBuffer == true && (IsGrounded() || OnOneWay())) {
+        if (jumpBuffer == true && (IsGrounded() || GetOneWayPlatform())) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             jumpBuffer = false;
         }
@@ -67,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.linearVelocity.y < -1f){
             walkFX.Play();
+        }
+
+        Collider2D oneWay = GetOneWayPlatform();
+        if (vertical < 0f && oneWay && isDropping == false) {
+            StartCoroutine(DropThroughPlatform(oneWay));
         }
 
         animator.SetFloat("PlayerSpeed", Mathf.Abs(speedX));
@@ -93,6 +106,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+    }
+
+    private IEnumerator DropThroughPlatform(Collider2D platformCollider) {
+        isDropping = true;
+
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
+        yield return new WaitForSeconds(0.25f);
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+
+        isDropping = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -154,12 +177,16 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 0.2f), 0f, groundLayer);
     }
 
-    private bool OnOneWay() {
+    private Collider2D GetOneWayPlatform() {
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 0.2f), 0f, oneWayLayer);
     }
 
     private bool CanJumpBuffer() {
-        return Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.45f, 1.5f), 0f, groundLayer);
+        bool canJumpBuffer = false;
+        if (Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.45f, 1.5f), 0f, groundLayer) || Physics2D.OverlapBox(jumpBufferCheck.position, new Vector2(0.45f, 1.5f), 0f, oneWayLayer)) {
+            canJumpBuffer = true;
+        }
+        return canJumpBuffer;
     }
 
     private bool DamageCheck() {
