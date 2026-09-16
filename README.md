@@ -89,26 +89,26 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 3.1 Core Mechanics
 | ID | Mechanic | Description | Implemented In (Script/Object) |
 |---|---|---|---|
-| M-1 |Collect|Allows the player to collect orbs around the level|Orb: OrbController|
+| M-1 |Collect|Allows the player to collect orbs around the level.|Orb: OrbController|
 | M-2 |Health|Health tracks the player's amount of lives.|Heart: HealthSystem|
-| M-3 |Enemy|Jumping on enemies allows you to defeat them| |
-| M-4 | | | |
+| M-3 |Enemy|Jumping on enemies allows you to defeat them.|Enemy: EnemyBehaviour|
+| M-4 |Lava|Lava damages the player when they step in it.|Obstacle: PlayerMovement|
 | M-5 | | | |
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+|Jump|SPACE|Allows the player to jump. Jump height varies on how long the player holds the space bar.|
+|Drop|S|Allows the player to drop through one way platforms.|
+|Horizontal Movement|A / D|Lets the player move left and right.|
 | | | |
 
 ### 3.3 Physics & Collision
 | Feature | Description |
 |---|---|
-| | |
-| | |
-| | |
+|Tilemap|A grid of tiles that the player walks on.|
+|Enemy|When the player jumps on an enemy, a small bounce is applied.|
+|Orbs|When the player collides with an orb it disappears and adds to the count.|
 
 ### 3.4 Game Loop
 | Stage | Description |
@@ -170,9 +170,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Feature | Description | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+|ShadowCaster2D|Casts shadows around the level.| |
+|Spot Light|Shines light in one specific spot.| |
+|Lava Light|Creates a light game object at every lava tile.| |
 
 > Add screenshot images using: `![Feature Name](./docs/screenshots/lighting_name.png)`
 
@@ -210,14 +210,14 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-| | | |
-| | | |
+|WhitePalace|Main Menu|Composed by Christopher Larkin in 'Hollow Knight'.|
+|Confined|Anxiety Level|Composed by Mekbok in 'The Foundation'.|
 
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
 |---|---|---|
-| | | |
-| | | |
+|UIHover|When a UI element is hovered.|400 Sounds Pack by Chequered Ink - Itch.io|
+|UIClick|When a UI element is clicked.|400 Sounds Pack by Chequered Ink - Itch.io|
 | | | |
 | | | |
 
@@ -286,11 +286,11 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 8.1 Script Summary
 | Script Name | Attached To | Responsibility |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+|PlayerMovement|Player|Player movement and main controller.|
+|BGController|Parallax|Controls parallax background elements.|
+|EnemyBehaviour|Enemy|Allows the enemy to move around and jump.|
+|OrbController|Orb|Allows orbs to be collected.|
+|MainMenu|Main Menu Elements|Individually controls each of the UI elements.|
 
 ### 8.2 Key Algorithms / Logic
 | Feature | Script | Description |
@@ -314,12 +314,12 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | # | Title | Author / Creator | URL / Source | What You Used It For | What You Changed / Adapted |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 |Quick Shadow Creation with One Click - Unity2D Auto SHADOW CASTER 2D creator|Rehope Games|https://www.youtube.com/watch?v=n3tgimClTrI|I used it to create shadows in my level and modify lights for different objects.|I added a Game Object Brush to automatically generate lights in my scene.|
+| 2 |Make Your MAIN MENU Quickly! - Unity UI Tutorial For Beginners|Rehope Games|https://www.youtube.com/watch?v=DX7HyN7oJjE|I used it to make my main menu and UI elements in the level.|I added UI animations and improved the settings panel.|
+| 3 |How to Add MUSIC and SOUND EFFECTS to a Game in Unity - Unity 2D Platformer Tutorial #16|Rehope Games|https://www.youtube.com/watch?v=N8whM1GjH4w|I used it to start music in my game and implement sound effects.|I used the sound effects for UI elements as well.|
+| 4 |Dynamic Heart System - Heart Health Bar - Unity Tutorial|Hyyder Works|https://www.youtube.com/watch?v=lBRwsl25jUs|I made a heart health system to keep track of the player health.|I changed the script to generate a custom amount of hearts.|
+| 5 |Easy Tilemaps and Dynamic Auto Tiling - Unity 2D|Game Code Library|https://www.youtube.com/watch?v=8UctaO5DwUE|I used this to make the tilemap that creates the level|I added tiles that have different functions like ones that damage you.|
+| 6 |Adding Dust Particle Effects - 2D Platformer Unity #6|Game Code Library|https://www.youtube.com/watch?v=aEGJn5hu_qw|I used this to make the player particle effects.|I also added particle systems for the enemy and flares.|
 | 7 | | | | | |
 | 8 | | | | | |
 
