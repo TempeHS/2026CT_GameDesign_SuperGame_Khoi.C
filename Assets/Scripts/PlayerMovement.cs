@@ -93,13 +93,7 @@ public class PlayerMovement : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (DamageCheck()) {
-            sprite.color = new Color32(219, 61, 61, 255);
-            maxSpeed = 4f;
-            if (timer < 0f) {
-                healthSystemRef.DealDamage();
-                hitFX.Play();
-                timer = 0.5f;
-            }
+            DealDamage();
         } else {
             sprite.color = Color.white;
             maxSpeed = 6f;
@@ -146,6 +140,16 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             Vector2 kbForce = new Vector2(kbForceX, 12f);
             rb.AddForce(kbForce, ForceMode2D.Impulse);
+        }
+    }
+
+    public void DealDamage() {
+        sprite.color = new Color32(219, 61, 61, 255);
+        maxSpeed = 4f;
+        if (timer < 0f) {
+            healthSystemRef.DealDamage();
+            hitFX.Play();
+            timer = 0.5f;
         }
     }
 
