@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
-        if(Input.GetButtonDown("Jump") && CanJumpBuffer()) {
+        if(Input.GetButtonDown("Jump") && CanJumpBuffer() && rb.linearVelocity.y < 1f) {
             jumpBuffer = true;
         }
 
@@ -210,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
         float direction = Mathf.Sign(speedX);
         Vector2 checkPos = new Vector2(transform.position.x + direction * 0.3f, transform.position.y + 0.5f);
 
-        if (Physics2D.OverlapBox(checkPos, new Vector2(0.1f, 1f), 0f, groundLayer)) {
+        if (Physics2D.OverlapBox(checkPos, new Vector2(0.1f, 0.4f), 0f, groundLayer)) {
             if (direction != 0 && horizontal != 0) {
                 speedX = 0f;
                 horizontal = 0f;

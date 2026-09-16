@@ -15,7 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask playerLayer; 
+    [SerializeField] private LayerMask oneWayLayer;
     [SerializeField] private float jumpInterval = 2f;
 
     void Start()
@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
            animator.SetBool("PreJump", false);
         }
 
-        if(IsGrounded()) {
+        if(IsGrounded() || GetOneWayPlatform()) {
             jumpTimer -= Time.deltaTime;
             if (jumpTimer <= 0f) {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
@@ -46,9 +46,10 @@ public class EnemyBehaviour : MonoBehaviour
         
 
         Flip();
-
+        
+        bool onGround = IsGrounded() || GetOneWayPlatform();
         animator.SetFloat("SpeedY", rb.linearVelocity.y);
-        animator.SetBool("InAir", !IsGrounded());
+        animator.SetBool("InAir", !onGround);
     }
 
     private void FixedUpdate() {
@@ -72,6 +73,13 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision) {
+        bool isEnemy = collision.gameObject.CompareTag("Enemy");
+        if (isEnemy) {
+            Flip();
+        }
+    }
+
     private void Flip() {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
@@ -84,6 +92,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool IsGrounded() {
         return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.7f, 0.2f), 0f, groundLayer);
+    }
+
+    private Collider2D GetOneWayPlatform() {
+        return Physics2D.OverlapBox(groundCheck.position, new Vector2(0.45f, 0.2f), 0f, oneWayLayer);
     }
 
     public void ParticleFX() {
