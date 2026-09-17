@@ -82,15 +82,15 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "file:C:/Users/khoi.cao1/Downloads/2d-extras-2.2.2/2d-extras-2.2.2",
-      "depth": 0,
-      "source": "local",
+      "version": "4.1.1",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
-        "com.unity.modules.tilemap": "1.0.0",
         "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.tilemap": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
-      }
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
       "version": "1.8.24",
@@ -138,7 +138,7 @@
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "10.0.7",
         "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "4.1.0",
+        "com.unity.2d.tilemap.extras": "4.1.1",
         "com.unity.2d.aseprite": "1.1.10"
       }
     },

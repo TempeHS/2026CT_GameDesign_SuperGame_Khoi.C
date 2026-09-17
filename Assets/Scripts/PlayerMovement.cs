@@ -170,6 +170,10 @@ public class PlayerMovement : MonoBehaviour
         float finalYVelocity = Mathf.Min(rb.linearVelocity.y, 50f);
         rb.linearVelocity = new Vector2(speedX, finalYVelocity);
 
+        if (!isKB && horizontal != 0 && (IsGrounded() || GetOneWayPlatform())) {
+            CheckLedge();
+        }
+
         if (isKB) {
             speedX = Mathf.MoveTowards(speedX, 0f, 10f * Time.fixedDeltaTime);
         } else if (horizontal == 0f) {
@@ -222,4 +226,23 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-}
+
+    private void CheckLedge() {
+        float direction = Mathf.Sign(horizontal);
+        
+        Vector2 stepLowerPos = new Vector2(transform.position.x, transform.position.y - 0.7f); 
+        Vector2 stepUpperPos = new Vector2(transform.position.x, stepLowerPos.y + 0.4f);
+
+        RaycastHit2D hitLower = Physics2D.Raycast(stepLowerPos, Vector2.right * direction, 0.35f, groundLayer);
+        RaycastHit2D hitUpper = Physics2D.Raycast(stepUpperPos, Vector2.right * direction, 0.35f, groundLayer);
+            
+            if (hitLower.collider && hitUpper.collider == null) {
+                Vector2 targetPos = new Vector2(transform.position.x + (direction * 0.05f), transform.position.y + 0.4f);
+                rb.MovePosition(Vector2.Lerp(rb.position, targetPos, Time.fixedDeltaTime * 20f));
+                
+                if (rb.linearVelocity.y < 0) {
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+                }
+            }
+        }
+    }

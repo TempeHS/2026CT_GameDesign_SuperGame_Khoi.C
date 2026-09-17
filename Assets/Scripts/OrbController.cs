@@ -11,6 +11,12 @@ public class OrbController : MonoBehaviour
 
     [SerializeField] private float waveSpacing = 0.3f;
 
+    AudioManager audioManager;
+
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         startY = transform.position.y;
@@ -46,7 +52,8 @@ public class OrbController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-                Destroy(gameObject);
+            audioManager.PlaySFX(audioManager.collect);
+            Destroy(gameObject);
         }
     }
 }

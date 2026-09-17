@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip Confined;
     public AudioClip hover;
     public AudioClip click;
+    public AudioClip collect;
+    public AudioClip splat;
 
     [Header("Audio In Scene")]
     [SerializeField] private AudioClip music;

@@ -93,7 +93,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | M-2 |Health|Health tracks the player's amount of lives.|Heart: HealthSystem|
 | M-3 |Enemy|Jumping on enemies allows you to defeat them.|Enemy: EnemyBehaviour|
 | M-4 |Lava|Lava damages the player when they step in it.|Obstacle: PlayerMovement|
-| M-5 | | | |
+| M-5 |Flare|A geyser that spews lava and damages the player.|Obstacle: FlareBehaviour|
 
 ### 3.2 Player Controls
 | Action | Input (Keyboard / Controller) | Description |
@@ -133,10 +133,10 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
+|WalkFX|The effect is applied when the player falls or turns.| |
+|EnemyParticleFX|The splatter of killing the enemy| |
+|FlareParticleFX|Spewing lava recreated with particles| |
+|HitFX|Particles to indicate the player was hit| |
 
 > Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
 
@@ -158,9 +158,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+|PlayerWalk|Player|The animation of the player's horizontal movement.| |
+|AngerJump|Enemy|The animation of the enemy jumping.| |
+|HeartLoss|Heart|The animation for losing a heart.| |
 
 > Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
 
@@ -218,8 +218,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |---|---|---|
 |UIHover|When a UI element is hovered.|400 Sounds Pack by Chequered Ink - Itch.io|
 |UIClick|When a UI element is clicked.|400 Sounds Pack by Chequered Ink - Itch.io|
-| | | |
-| | | |
+|Collect|When an orb is collected.|gold_pickup.wav by killersmurf96 - Freesound.org|
+|Splat|When an enemy is killed.|splat_005.wav by yottasounds - Freesound.org|
 
 ### 5.3 Audio Implementation
 | Feature | Description |
@@ -235,9 +235,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 6.1 HUD Elements
 | Element | Purpose | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+|Start|Allows the player to start the game.| |
+|Settings|Allows the player to control volume and return to the main menu.| |
+|Volume|Adjusts the global volume of the game.| |
 
 > Add screenshot images using: `![HUD Element](./docs/screenshots/hud_name.png)`
 
@@ -320,8 +320,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | 4 |Dynamic Heart System - Heart Health Bar - Unity Tutorial|Hyyder Works|https://www.youtube.com/watch?v=lBRwsl25jUs|I made a heart health system to keep track of the player health.|I changed the script to generate a custom amount of hearts.|
 | 5 |Easy Tilemaps and Dynamic Auto Tiling - Unity 2D|Game Code Library|https://www.youtube.com/watch?v=8UctaO5DwUE|I used this to make the tilemap that creates the level|I added tiles that have different functions like ones that damage you.|
 | 6 |Adding Dust Particle Effects - 2D Platformer Unity #6|Game Code Library|https://www.youtube.com/watch?v=aEGJn5hu_qw|I used this to make the player particle effects.|I also added particle systems for the enemy and flares.|
-| 7 | | | | | |
-| 8 | | | | | |
+| 7 |How to Create 2D Enemy Movement in Unity|Wild Cockatiel Games|https://www.youtube.com/watch?v=7mkD9K2nwDM|I used this guide to make a enemy that moves side by side|I also made the enemy jump every 2 second intervals.|
+| 8 |How to Setup Animator and Animations in Unity 2D|Wild Cockatiel Games|https://www.youtube.com/watch?v=AdQz2wStdLY&pp=0gcJCf4LAYcqIYzv|I created my player animations for walking and jumping.|I extended it to other game objects like enemies and orbs.|
 
 ---
 

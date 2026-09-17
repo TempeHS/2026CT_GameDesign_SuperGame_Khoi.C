@@ -12,6 +12,6 @@ public class SmoothCameraMovement : MonoBehaviour
         offsetX = player.transform.position.x - transform.position.x;
         offsetY = player.transform.position.y - transform.position.y;
 
-        transform.position = new Vector3(transform.position.x + (offsetX / 10f), transform.position.y + (offsetY / 10f), transform.position.z);
+        transform.position = new Vector3(transform.position.x + (offsetX / 30f), transform.position.y + (offsetY / 30f), transform.position.z);
     }
 }

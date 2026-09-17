@@ -18,6 +18,12 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private LayerMask oneWayLayer;
     [SerializeField] private float jumpInterval = 2f;
 
+    AudioManager audioManager;
+
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -101,6 +107,7 @@ public class EnemyBehaviour : MonoBehaviour
     public void ParticleFX() {
         particleFX.transform.position = gameObject.transform.position;
         particleFX.Play();
+        audioManager.PlaySFX(audioManager.splat);
         Destroy(gameObject);
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VolcanoParticleController : MonoBehaviour
+public class FlareBehaviour : MonoBehaviour
 {
     private ParticleSystem ps;
 
