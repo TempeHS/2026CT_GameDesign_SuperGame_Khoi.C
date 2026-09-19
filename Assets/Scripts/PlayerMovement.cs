@@ -236,13 +236,13 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hitLower = Physics2D.Raycast(stepLowerPos, Vector2.right * direction, 0.35f, groundLayer);
         RaycastHit2D hitUpper = Physics2D.Raycast(stepUpperPos, Vector2.right * direction, 0.35f, groundLayer);
             
-            if (hitLower.collider && hitUpper.collider == null) {
-                Vector2 targetPos = new Vector2(transform.position.x + (direction * 0.05f), transform.position.y + 0.4f);
-                rb.MovePosition(Vector2.Lerp(rb.position, targetPos, Time.fixedDeltaTime * 20f));
-                
-                if (rb.linearVelocity.y < 0) {
-                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-                }
+        if (hitLower.collider && hitUpper.collider == null) {
+            Vector2 targetPos = new Vector2(transform.position.x + (direction * 0.05f), transform.position.y + 0.4f);
+            rb.MovePosition(Vector2.Lerp(rb.position, targetPos, Time.fixedDeltaTime * 20f));
+            
+            if (rb.linearVelocity.y < 0) {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             }
         }
     }
+}

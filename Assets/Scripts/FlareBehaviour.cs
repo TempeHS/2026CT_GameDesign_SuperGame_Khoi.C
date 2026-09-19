@@ -6,7 +6,7 @@ public class FlareBehaviour : MonoBehaviour
     private ParticleSystem ps;
 
     public float eruptionDuration = 3f;
-    public float dormantDuration = 5f;
+    public float dormantDuration = 3f;
 
     private GameObject player;
     private Collider2D playerCollider;

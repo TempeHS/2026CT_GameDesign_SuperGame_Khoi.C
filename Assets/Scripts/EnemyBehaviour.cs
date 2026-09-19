@@ -70,7 +70,7 @@ public class EnemyBehaviour : MonoBehaviour
         
         float direction = Mathf.Sign(speedX);
         Vector2 checkPos = new Vector2(transform.position.x + direction * 0.5f, transform.position.y + 0.5f);
-
+        
         if (Physics2D.OverlapBox(checkPos, new Vector2(0.1f, 1f), 0f, groundLayer)) {
             if (direction != 0 && horizontal != 0) {
                 speedX = 0f;
@@ -82,7 +82,7 @@ public class EnemyBehaviour : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         bool isEnemy = collision.gameObject.CompareTag("Enemy");
         if (isEnemy) {
-            Flip();
+            horizontal = horizontal * -1f; 
         }
     }
 

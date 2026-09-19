@@ -4850,4 +4850,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eruptionDuration: 3
-  dormantDuration: 5
+  dormantDuration: 3
