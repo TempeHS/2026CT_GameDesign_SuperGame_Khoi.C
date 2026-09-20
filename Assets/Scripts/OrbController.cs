@@ -12,9 +12,11 @@ public class OrbController : MonoBehaviour
     [SerializeField] private float waveSpacing = 0.3f;
 
     AudioManager audioManager;
+    OrbCounter orbCounterRef;
 
     private void Awake() {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        orbCounterRef = GameObject.FindGameObjectWithTag("OrbCounter").GetComponent<OrbCounter>();
     }
 
     void Start()
@@ -52,6 +54,7 @@ public class OrbController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            orbCounterRef.ChangeOrbCount(1);
             audioManager.PlaySFX(audioManager.collect);
             Destroy(gameObject);
         }

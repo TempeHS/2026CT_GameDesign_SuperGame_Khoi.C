@@ -57,9 +57,23 @@ public class HealthSystem : MonoBehaviour
             timer = 2f;
 
             Animator anim = hearts[maxHealth + health].GetComponent<Animator>();
-            if (anim != null)
-                anim.SetTrigger("HeartTrigger");
+            if (anim != null) {
+                anim.SetTrigger("HeartTriggerLoss");
+            }
 
+            DisplayHearts();
+        }
+    }
+
+    public void Heal()
+    {
+        if (health < maxHealth)
+        {
+            Animator anim = hearts[maxHealth + health].GetComponent<Animator>();
+            if (anim != null) {
+                anim.SetTrigger("HeartTriggerGain");
+            }
+            health += 1;
             DisplayHearts();
         }
     }

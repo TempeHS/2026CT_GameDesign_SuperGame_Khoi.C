@@ -339,9 +339,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 10.2 Audio Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+|400 Sounds Pack|.wav|Chequered Ink|Not for commercial use (CC BY-NC 4.0)|https://ci.itch.io/400-sounds-pack|UI elements|
+|gold_pickup|.wav|killersmurf96|For all uses (CC BY 4.0)| https://freesound.org/people/Killersmurf96/sounds/423123/|Orb pickup|
+|splat 005|.wav|yottasounds|For all uses (CC0 1.0)|https://freesound.org/people/yottasounds/sounds/232135/|Enemy destroy|
 
 ### 10.3 Scripts & Code Snippets
 | Script / Snippet | Source | Licence | URL | Used For | Changes Made |
@@ -359,7 +359,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 10.5 Fonts
 | Font Name | Creator / Source | Licence | URL |
 |---|---|---|---|
-| | | | |
+|Special Gothic Condensed One|Alistair McCready - Google Fonts|Commercial or other use (OFL Version 1.1)|https://fonts.google.com/specimen/Special+Gothic+Condensed+One?preview.script=Latn|
 | | | | |
 
 ---
