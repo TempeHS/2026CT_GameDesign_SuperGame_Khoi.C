@@ -258,8 +258,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 7.1 Scene List
 | Scene Name | Purpose | Description |
 |---|---|---|
-| | | |
-| | | |
+|MainMenu|Holds the main menu of the game.|The main menu contains the start, settings, and quit buttons.|
+|EvilLevel|The level that the player starts on.|Has the main gameplay of the game.|
 | | | |
 | | | |
 
@@ -368,10 +368,10 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | # | Challenge Encountered | How It Was Solved |
 |---|---|---|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
+| 1 |Heart animations were difficult to implement because they were clones. This made them hard to animate in the script.|I did some debugging and found the root cause of why the heart animations were not being applied which was some issues involving the trigger in the animator and its behaviour.|
+| 2 |The main menu buttons created were not fully scaled so they behaved strangely with the interactable buttons.|I added the button as a separate game object, making it a child of the button which allowed me to freely change the scale.|
+| 3 |Lighting was difficult to integrate at first because the shadows were not applied to the tilemap which is what was being used to generate the level.|I added a shadow caster script to the tilemap and it was able to cast shadows properly.|
+| 4 || |
 | 5 | | |
 
 ---
