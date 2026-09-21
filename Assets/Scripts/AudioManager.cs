@@ -15,6 +15,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip click;
     public AudioClip collect;
     public AudioClip splat;
+    public AudioClip deposit;
+    public AudioClip text;
+    public AudioClip deny;
 
     [Header("Audio In Scene")]
     [SerializeField] private AudioClip music;

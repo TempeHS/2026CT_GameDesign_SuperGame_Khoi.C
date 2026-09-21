@@ -9,6 +9,12 @@ public class DialogueReceiver : MonoBehaviour
     public float textSpeed = 0.05f;
 
     private int index;
+
+    AudioManager audioManager;
+
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     
     public void GetLines(string[] receivedLines) {
         lines = receivedLines;
@@ -53,6 +59,7 @@ public class DialogueReceiver : MonoBehaviour
         foreach (char c in lines[index].ToCharArray()) {
             text.text += c;
             yield return new WaitForSeconds(textSpeed);
+            audioManager.PlaySFX(audioManager.text);
         }
     }
 }

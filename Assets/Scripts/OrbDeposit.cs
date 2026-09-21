@@ -8,6 +8,13 @@ public class OrbDeposit : MonoBehaviour
     public HealthSystem healthSystemRef;
     public OrbCounter orbCounterRef;
     private bool isPlayerTouching;
+    [SerializeField] private int orbCost = 20;
+
+    AudioManager audioManager;
+
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update() {
         if (isPlayerTouching)
@@ -16,9 +23,12 @@ public class OrbDeposit : MonoBehaviour
             {
                 int currentOrbs = orbCounterRef.orbs; 
                 int currentHealth = healthSystemRef.health;
-                if (currentOrbs >= 25 && currentHealth < 5) {
-                   orbCounterRef.ChangeOrbCount(-25);
+                if (currentOrbs >= orbCost && currentHealth < 5) {
+                    orbCounterRef.ChangeOrbCount(orbCost * -1);
                     healthSystemRef.Heal(); 
+                    audioManager.PlaySFX(audioManager.deposit);
+                } else {
+                    audioManager.PlaySFX(audioManager.deny);
                 }
             }
         }
