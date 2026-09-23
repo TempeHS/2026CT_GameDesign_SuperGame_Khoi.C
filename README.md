@@ -70,7 +70,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | Field | Detail |
 |---|---|
 | **Video Title** |CT AT3 - Capstone Project|
-| **Link / Embed** ||
+| **Link / Embed** |https://youtu.be/JB0aVj6R6s4|
 | **Duration** |2:42|
 | **Description** |Presents the features of my game.|
 
@@ -78,9 +78,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Clip | Description | Link |
 |---|---|---|
-|Orb Deposit|Depositing orbs for lives makes the game much more enjoyable and open.||
-|Anxiety Boss|Anxiety is the final boss of the Anxiety level for IN=SOMNIA.||
-|Anger|Anger is the first enemy met and is still one of the most interesting.||
+|Orb Deposit|Depositing orbs for lives makes the game much more enjoyable and open.|https://youtu.be/yheBR2mjeGM|
+|Anxiety Boss|Anxiety is the final boss of the Anxiety level for IN=SOMNIA.|https://youtu.be/7XjSfnABwPo|
+|Anger|Anger is the first enemy met and is still one of the most interesting.|https://youtu.be/vkmnZlHYr14g|
 
 ---
 
