@@ -69,18 +69,18 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Field | Detail |
 |---|---|
-| **Video Title** | |
-| **Link / Embed** | |
-| **Duration** | |
-| **Description** | |
+| **Video Title** |CT AT3 - Capstone Project|
+| **Link / Embed** ||
+| **Duration** |2:42|
+| **Description** |Presents the features of my game.|
 
 ### 2.2 Feature Highlight Clips
 
 | Clip | Description | Link |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+|Orb Deposit|Depositing orbs for lives makes the game much more enjoyable and open.||
+|Anxiety Boss|Anxiety is the final boss of the Anxiety level for IN=SOMNIA.||
+|Anger|Anger is the first enemy met and is still one of the most interesting.||
 
 ---
 
@@ -323,9 +323,12 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 10.2 Audio Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-|400 Sounds Pack|.wav|Chequered Ink|Not for commercial use (CC BY-NC 4.0)|https://ci.itch.io/400-sounds-pack|UI elements|
+|400 Sounds Pack|.wav|Chequered Ink|Non-commercial use (CC BY-NC 4.0)|https://ci.itch.io/400-sounds-pack|UI elements|
 |gold_pickup|.wav|killersmurf96|For all uses (CC BY 4.0)| https://freesound.org/people/Killersmurf96/sounds/423123/|Orb pickup|
 |splat 005|.wav|yottasounds|For all uses (CC0 1.0)|https://freesound.org/people/yottasounds/sounds/232135/|Enemy destroy|
+|White Palace|.mp3|Christopher Larkin|Used strictly for non-commercial educational use|https://www.youtube.com/watch?v=4JWANCA-Pbw|Main menu music|
+|Confined|.mp3|Mekbok|Used strictly for non-commercial educational use|https://www.youtube.com/watch?v=RSDliCJ132I&list=RDRSDliCJ132I&start_radio=1|Level music|
+|Search Party|.mp3|NoLongerNull|Used strictly for non-commercial educational use|https://www.youtube.com/watch?v=ms_8Yfjcymk&list=RDms_8Yfjcymk&start_radio=1|ANXIETY boss music|
 
 ### 10.3 Scripts & Code Snippets
 | Script / Snippet | Source | Licence | URL | Used For | Changes Made |
