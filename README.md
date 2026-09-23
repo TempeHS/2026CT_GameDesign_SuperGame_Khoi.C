@@ -101,7 +101,6 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |Jump|SPACE|Allows the player to jump. Jump height varies on how long the player holds the space bar.|
 |Drop|S|Allows the player to drop through one way platforms.|
 |Horizontal Movement|A / D|Lets the player move left and right.|
-| | | |
 
 ### 3.3 Physics & Collision
 | Feature | Description |
@@ -133,12 +132,10 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-|WalkFX|The effect is applied when the player falls or turns.| |
-|EnemyParticleFX|The splatter of killing the enemy| |
-|FlareParticleFX|Spewing lava recreated with particles| |
-|HitFX|Particles to indicate the player was hit| |
-
-> Add screenshot images using: `![Effect Name](./docs/screenshots/effect_name.png)`
+|WalkFX|The effect is applied when the player falls or turns.|![Effect Name](./docs/screenshots/WalkFX.png)|
+|EnemyParticleFX|The splatter of killing the enemy|!Effect Name[](./docs/screenshots/EnemyParticleFX.png)|
+|FlareParticleFX|Spewing lava recreated with particles|![Effect Name](./docs/screenshots/FlareParticleFX.png)|
+|HitFX|Particles to indicate the player was hit|![Effect Name](./docs/screenshots/HitFX.png)|
 
 ---
 
@@ -150,19 +147,15 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | | | | |
 | | | | |
 
-> Add screenshot images using: `![Cut Scene Name](./docs/screenshots/cutscene_name.png)`
-
 ---
 
 ### 4.3 Animations
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-|PlayerWalk|Player|The animation of the player's horizontal movement.| |
-|AngerJump|Enemy|The animation of the enemy jumping.| |
-|HeartLoss|Heart|The animation for losing a heart.| |
-
-> Add screenshot images using: `![Animation Name](./docs/screenshots/animation_name.png)`
+|PlayerWalk|Player|The animation of the player's horizontal movement.|![Animation Name](./docs/screenshots/PlayerWalk.png)|
+|AngerJump|Enemy|The animation of the enemy jumping.|![Animation Name](./docs/screenshots/EnemyJump.png)|
+|HeartLoss|Heart|The animation for losing a heart.|![Animation Name](./docs/screenshots/HeartLoss.png)|
 
 ---
 
@@ -170,11 +163,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Feature | Description | Screenshot |
 |---|---|---|
-|ShadowCaster2D|Casts shadows around the level.| |
-|Spot Light|Shines light in one specific spot.| |
-|Lava Light|Creates a light game object at every lava tile.| |
-
-> Add screenshot images using: `![Feature Name](./docs/screenshots/lighting_name.png)`
+|ShadowCaster2D|Casts shadows around the level.|![Feature Name](./docs/screenshots/ShadowCaster2D.png)|
+|Spot Light|Shines light in one specific spot.|![Feature Name](./docs/screenshots/SpotLight.png)|
+|Lava Light|Creates a light game object at every lava tile.|![Feature Name](./docs/screenshots/LavaLight.png)|
 
 ---
 
@@ -182,11 +173,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
+|NoFriction|Player|It removes the friction from collisions|![Shader Name](./docs/screenshots/NoFriction.png)|
+|OrbMaterial|Orb|Gives the orbs a texture.|![Shader Name](./docs/screenshots/OrbMaterial.png)|
 | | | | |
-| | | | |
-| | | | |
-
-> Add screenshot images using: `![Shader Name](./docs/screenshots/shader_name.png)`
 
 ---
 
@@ -199,7 +188,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Description | Screenshot |
 |---|---|
-| | |
+|Parallax Background|![Parallax Background](./docs/screenshots/ParallaxBG.png)|
 | | |
 | | |
 
@@ -235,21 +224,16 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 6.1 HUD Elements
 | Element | Purpose | Screenshot |
 |---|---|---|
-|Start|Allows the player to start the game.| |
-|Settings|Allows the player to control volume and return to the main menu.| |
-|Volume|Adjusts the global volume of the game.| |
-
-> Add screenshot images using: `![HUD Element](./docs/screenshots/hud_name.png)`
+|Start|Allows the player to start the game.|![HUD Element](./docs/screenshots/Start.png)|
+|Settings|Allows the player to control volume and return to the main menu.|![HUD Element](./docs/screenshots/Settings.png)|
+|Volume|Adjusts the global volume of the game.|![HUD Element](./docs/screenshots/Volume.png)|
 
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu | | |
-| Pause Menu | | |
-| Game Over Screen | | |
-| | | |
-
-> Add screenshot images using: `![Menu Name](./docs/screenshots/menu_name.png)`
+| Main Menu |Serves as a navigational panel before starting the acutal game.|![Menu Name](./docs/screenshots/MainMenu.png)|
+| Pause Menu |Lets the player customise their experience and return to the main menu safely.|![Menu Name](./docs/screenshots/PauseMenu.png)|
+| Anchor Minigame |Allows the player to play the anchor minigame to unlock the exit.|![Menu Name](./docs/screenshots/AnchorMinigame.png)|
 
 ---
 

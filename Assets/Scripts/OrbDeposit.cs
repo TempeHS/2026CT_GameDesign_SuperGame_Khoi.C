@@ -46,6 +46,7 @@ public class OrbDeposit : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isPlayerTouching = false;
             interactRef.ActiveState(false);
         }
     }

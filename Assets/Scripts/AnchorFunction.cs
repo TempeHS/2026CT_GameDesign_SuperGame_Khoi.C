@@ -43,7 +43,7 @@ public class AnchorFunction : MonoBehaviour
 
     void Update()
     {
-        spinner.transform.Rotate(new Vector3(0, 0, 180 * spinDir) * Time.deltaTime);
+        spinner.transform.Rotate(new Vector3(0, 0, 150 * spinDir) * Time.deltaTime);
         percent += (targetPercent - percent) / 10f;
         fill.fillAmount = percent;
         if (targetPercent >= 0.7f) {
@@ -52,6 +52,12 @@ public class AnchorFunction : MonoBehaviour
             wheelImg.sprite = stages[1]; 
         } else {
             wheelImg.sprite = stages[0];
+        }
+        if (percent >= 0.99f) {
+            gameObject.SetActive(false);
+            Vector3Int cellPosition = targetTilemap.WorldToCell(currentAnchor.transform.position);
+            targetTilemap.SetTile(cellPosition, greenAnchorTile);
+            Destroy(currentAnchor);
         }
     }
 
@@ -69,12 +75,6 @@ public class AnchorFunction : MonoBehaviour
             }
             wheel.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
             spinDir = spinDir * -1;
-        }
-        if (percent >= 0.97) {
-            gameObject.SetActive(false);
-            Vector3Int cellPosition = targetTilemap.WorldToCell(currentAnchor.transform.position);
-            targetTilemap.SetTile(cellPosition, greenAnchorTile);
-            Destroy(currentAnchor);
         }
     }
 }
