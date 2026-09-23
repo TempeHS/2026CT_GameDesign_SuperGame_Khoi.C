@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public HealthSystem healthSystemRef;
     public ParticleSystem walkFX;
     public ParticleSystem hitFX;
+    public GameEndMenu gameEndRef;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;

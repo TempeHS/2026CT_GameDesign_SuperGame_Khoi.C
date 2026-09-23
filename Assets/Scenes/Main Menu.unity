@@ -303,7 +303,14 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 935c6945eb97ab74b93c3116261e58be, type: 3}
   collect: {fileID: 8300000, guid: 44795cd058deb77458e8b9e7452fab94, type: 3}
   splat: {fileID: 8300000, guid: 3343b5fb5b416ff4eac36ffb030157b8, type: 3}
-  music: {fileID: 8300000, guid: 7497f43f61bc4b746974cef594f85aa3, type: 3}
+  deposit: {fileID: 0}
+  text: {fileID: 0}
+  deny: {fileID: 0}
+  music:
+  - {fileID: 8300000, guid: 7497f43f61bc4b746974cef594f85aa3, type: 3}
+  - {fileID: 8300000, guid: 7497f43f61bc4b746974cef594f85aa3, type: 3}
+  - {fileID: 8300000, guid: 7497f43f61bc4b746974cef594f85aa3, type: 3}
+  fadeDuration: 0.75
 --- !u!4 &81670607
 Transform:
   m_ObjectHideFlags: 0

@@ -4,11 +4,15 @@ using UnityEngine.Tilemaps;
 
 public class AnchorFunction : MonoBehaviour
 {
+    private static int activatedAnchorsCount = 0;
+    public Vector3Int[] deletedTilesPos;
+
     public GameObject wheel;
     public GameObject spinner;
     public Image fill;
     public Sprite[] stages;
-    public Tilemap targetTilemap;
+    public Tilemap bgTilemap;
+    public Tilemap groundTilemap;
     public TileBase greenAnchorTile;
 
     private float targetPercent;
@@ -55,9 +59,14 @@ public class AnchorFunction : MonoBehaviour
         }
         if (percent >= 0.99f) {
             gameObject.SetActive(false);
-            Vector3Int cellPosition = targetTilemap.WorldToCell(currentAnchor.transform.position);
-            targetTilemap.SetTile(cellPosition, greenAnchorTile);
+            Vector3Int cellPosition = bgTilemap.WorldToCell(currentAnchor.transform.position);
+            bgTilemap.SetTile(cellPosition, greenAnchorTile);
+            AudioManager.instance.SwitchMusic(0);
             Destroy(currentAnchor);
+            activatedAnchorsCount += 1;
+            if (activatedAnchorsCount >= 3) {
+                ClearTilemap();
+            }
         }
     }
 
@@ -75,6 +84,12 @@ public class AnchorFunction : MonoBehaviour
             }
             wheel.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
             spinDir = spinDir * -1;
+        }
+    }
+
+    private void ClearTilemap() {
+        foreach (Vector3Int pos in deletedTilesPos) {
+            groundTilemap.SetTile(pos, null);
         }
     }
 }

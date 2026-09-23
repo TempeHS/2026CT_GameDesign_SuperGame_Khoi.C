@@ -12,9 +12,11 @@ public class HealthSystem : MonoBehaviour
     public GameObject heart;
     public GameObject healthContainer;
     public GameObject healthContainerTrans;
+    public GameEndMenu gameEndMenu;
+    public GameObject player;
     
     private float timer = 0f;
-
+    private bool death = false;
     private readonly List<GameObject> hearts = new();
 
     private void Start()
@@ -44,9 +46,17 @@ public class HealthSystem : MonoBehaviour
     {
         if (timer > 0f) timer -= Time.deltaTime;
 
-        if (health == 0) {
-            SceneManager.LoadSceneAsync(1);
+        if (health == 0 && death == false) {
+            StartCoroutine(Death());
+            death = true;
         }
+    }
+
+    IEnumerator Death()
+    {
+        Destroy(player);
+        yield return new WaitForSeconds(1f);
+        gameEndMenu.DeathScreen();
     }
 
     public void DealDamage()
