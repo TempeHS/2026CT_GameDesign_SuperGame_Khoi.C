@@ -132,10 +132,10 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Effect Name | Purpose | Screenshot |
 |---|---|---|
-|WalkFX|The effect is applied when the player falls or turns.|![Effect Name](./docs/screenshots/WalkFX.png)|
-|EnemyParticleFX|The splatter of killing the enemy|!Effect Name[](./docs/screenshots/EnemyParticleFX.png)|
-|FlareParticleFX|Spewing lava recreated with particles|![Effect Name](./docs/screenshots/FlareParticleFX.png)|
-|HitFX|Particles to indicate the player was hit|![Effect Name](./docs/screenshots/HitFX.png)|
+|WalkFX|The effect is applied when the player falls or turns.|![Effect Name](./docs/Screenshots/WalkFX.png)|
+|EnemyParticleFX|The splatter of killing the enemy|!Effect Name[](./docs/Screenshots/EnemyParticleFX.png)|
+|FlareParticleFX|Spewing lava recreated with particles|![Effect Name](./docs/Screenshots/FlareParticleFX.png)|
+|HitFX|Particles to indicate the player was hit|![Effect Name](./docs/Screenshots/HitFX.png)|
 
 ---
 
@@ -153,9 +153,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Animation | Object / Character | Description | Screenshot |
 |---|---|---|---|
-|PlayerWalk|Player|The animation of the player's horizontal movement.|![Animation Name](./docs/screenshots/PlayerWalk.png)|
-|AngerJump|Enemy|The animation of the enemy jumping.|![Animation Name](./docs/screenshots/EnemyJump.png)|
-|HeartLoss|Heart|The animation for losing a heart.|![Animation Name](./docs/screenshots/HeartLoss.png)|
+|PlayerWalk|Player|The animation of the player's horizontal movement.|![Animation Name](./docs/Screenshots/PlayerWalk.png)|
+|AngerJump|Enemy|The animation of the enemy jumping.|![Animation Name](./docs/Screenshots/EnemyJump.png)|
+|HeartLoss|Heart|The animation for losing a heart.|![Animation Name](./docs/Screenshots/HeartLoss.png)|
 
 ---
 
@@ -163,9 +163,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Feature | Description | Screenshot |
 |---|---|---|
-|ShadowCaster2D|Casts shadows around the level.|![Feature Name](./docs/screenshots/ShadowCaster2D.png)|
-|Spot Light|Shines light in one specific spot.|![Feature Name](./docs/screenshots/SpotLight.png)|
-|Lava Light|Creates a light game object at every lava tile.|![Feature Name](./docs/screenshots/LavaLight.png)|
+|ShadowCaster2D|Casts shadows around the level.|![Feature Name](./docs/Screenshots/ShadowCaster2D.png)|
+|Spot Light|Shines light in one specific spot.|![Feature Name](./docs/Screenshots/SpotLight.png)|
+|Lava Light|Creates a light game object at every lava tile.|![Feature Name](./docs/Screenshots/LavaLight.png)|
 
 ---
 
@@ -173,8 +173,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Shader / Material | Applied To | Description | Screenshot |
 |---|---|---|---|
-|NoFriction|Player|It removes the friction from collisions|![Shader Name](./docs/screenshots/NoFriction.png)|
-|OrbMaterial|Orb|Gives the orbs a texture.|![Shader Name](./docs/screenshots/OrbMaterial.png)|
+|NoFriction|Player|It removes the friction from collisions|![Shader Name](./docs/Screenshots/NoFriction.png)|
+|OrbMaterial|Orb|Gives the orbs a texture.|![Shader Name](./docs/Screenshots/OrbMaterial.png)|
 | | | | |
 
 ---
@@ -183,12 +183,12 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 <!--
   Add any other notable screenshots here.
-  Syntax: ![Description](./docs/screenshots/filename.png)
+  Syntax: ![Description](./docs/Screenshots/filename.png)
 -->
 
 | Description | Screenshot |
 |---|---|
-|Parallax Background|![Parallax Background](./docs/screenshots/ParallaxBG.png)|
+|Parallax Background|![Parallax Background](./docs/Screenshots/ParallaxBG.png)|
 | | |
 | | |
 
@@ -215,7 +215,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |---|---|
 | Audio Mixer / Groups | |
 | Spatial / 3D Audio | |
-| Dynamic Audio | |
+| Dynamic Audio |Music is changed in stages in the anxiety boss stage.|
 
 ---
 
@@ -224,16 +224,16 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 6.1 HUD Elements
 | Element | Purpose | Screenshot |
 |---|---|---|
-|Start|Allows the player to start the game.|![HUD Element](./docs/screenshots/Start.png)|
-|Settings|Allows the player to control volume and return to the main menu.|![HUD Element](./docs/screenshots/Settings.png)|
-|Volume|Adjusts the global volume of the game.|![HUD Element](./docs/screenshots/Volume.png)|
+|Start|Allows the player to start the game.|![HUD Element](./docs/Screenshots/Start.png)|
+|Settings|Allows the player to control volume and return to the main menu.|![HUD Element](./docs/Screenshots/Settings.png)|
+|Volume|Adjusts the global volume of the game.|![HUD Element](./docs/Screenshots/Volume.png)|
 
 ### 6.2 Menus
 | Menu | Purpose | Screenshot |
 |---|---|---|
-| Main Menu |Serves as a navigational panel before starting the acutal game.|![Menu Name](./docs/screenshots/MainMenu.png)|
-| Pause Menu |Lets the player customise their experience and return to the main menu safely.|![Menu Name](./docs/screenshots/PauseMenu.png)|
-| Anchor Minigame |Allows the player to play the anchor minigame to unlock the exit.|![Menu Name](./docs/screenshots/AnchorMinigame.png)|
+| Main Menu |Serves as a navigational panel before starting the acutal game.|![Menu Name](./docs/Screenshots/MainMenu.png)|
+| Pause Menu |Lets the player customise their experience and return to the main menu safely.|![Menu Name](./docs/Screenshots/PauseMenu.png)|
+| Anchor Minigame |Allows the player to play the anchor minigame to unlock the exit.|![Menu Name](./docs/Screenshots/AnchorMinigame.png)|
 
 ---
 
@@ -244,8 +244,6 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |---|---|---|
 |MainMenu|Holds the main menu of the game.|The main menu contains the start, settings, and quit buttons.|
 |EvilLevel|The level that the player starts on.|Has the main gameplay of the game.|
-| | | |
-| | | |
 
 ### 7.2 Level / Environment Screenshots
 | Level / Area | Description | Screenshot |
@@ -254,7 +252,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | | | |
 | | | |
 
-> Add screenshot images using: `![Level Name](./docs/screenshots/level_name.png)`
+> Add screenshot images using: `![Level Name](./docs/Screenshots/level_name.png)`
 
 ### 7.3 Scene Management
 | Feature | Description |
@@ -279,14 +277,14 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 8.2 Key Algorithms / Logic
 | Feature | Script | Description |
 |---|---|---|
-| | | |
+|Damage| | |
 | | | |
 | | | |
 
 ### 8.3 Design Patterns Used
 | Pattern | Where Applied | Justification |
 |---|---|---|
-| | | |
+|Audio Manager|Applied in multiple game objects to refer back to the Audio Manager|Referring back to the Audio Manager allows you to play sounds from any game object.|
 | | | |
 | | | |
 
@@ -384,21 +382,20 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
+| **Branch Name** |Parallax BG|
+| **Feature Developed** |Parallax background|
+| **Merged Into** |Main|
+| **Date Started** |July 27|
+| **Date Merged** |Aug 12|
 
 #### What Was Built
-<!-- Describe what this branch added or changed -->
+I implemented the parallax background to give the game a 3D effect in a 2D space. The parallax background requires different layers to recreate a 3D effect.
 
 #### Key Commits
 | Commit Message | What Changed |
 |---|---|
-| | |
-| | |
-| | |
+|wip: parallax bg|Started work on the basic parallax scripts.|
+|feature: new parallax|Updated the parallax backgrounds to match the latest version.|
 
 #### Problems Encountered & Resolved
 | Problem | Resolution |
@@ -408,7 +405,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 #### Screenshot / Evidence
 <!-- Add a screenshot of the feature working -->
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
+> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
 
 ---
 
@@ -416,30 +413,30 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Field | Detail |
 |---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
+| **Branch Name** |Level Overhaul|
+| **Feature Developed** |Improved level mechanics|
+| **Merged Into** |Main|
+| **Date Started** |Sep 11|
+| **Date Merged** |Sep 23|
 
 #### What Was Built
-
+The level was a bit plain and barren so I added enemies, obstacles, orb depositing, and the boss of the level.
 
 #### Key Commits
 | Commit Message | What Changed |
 |---|---|
-| | |
-| | |
-| | |
+|feature: improved lighting and orb tilemap|This commit allowed me to efficiently make orbs and implemented a lighting and shadow caster system across the level, allowing me to cast shadows and create dynamic lights.|
+|feature: lava spews|This added a new obstacle, Flare. Flare acts as a volcano that erupts occasionally, making my level more interesting.|
+|feature: anxiety boss|This commit implemented the anxiety boss into the game and created the win and lose conditions.|
 
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
-| | |
-| | |
+|Heart deposit was not working properly.|Changed the animation settings for the heart deposit function.|
+|Anchor minigame spinner was not scaled properly.|Adjust the scaling to be a 1:1 ratio.|
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
+> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
 
 ---
 
@@ -470,7 +467,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | | |
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
+> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
 
 ---
 
@@ -501,7 +498,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | | |
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
+> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
 
 ---
 
@@ -532,7 +529,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | | |
 
 #### Screenshot / Evidence
-> `![Feature Name](./docs/screenshots/branch_feature_name.png)`
+> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
 
 ---
 
