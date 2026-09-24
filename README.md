@@ -7,7 +7,7 @@
 | **Class / Course** |10CT1 / Computer Technology|
 | **Repository** |https://github.com/TempeHS/2026CT_GameDesign_SuperGame_Khoi.C/tree/main|
 | **Unity Version** |6000.0.58f1|
-| **Document Version** |0.1|
+| **Document Version** |1.0|
 | **Date** |27/08/2026|
 
 ---
@@ -34,7 +34,7 @@
 Action
 
 ### 1.2 Target Audience
-People aged 13-24 years, as mental health is prominent in this age range.
+The target audience is people aged 13-24 years old, as mental health is prominent in this age range. Though because the aim of the game is to spread mental health awareness, it can be played from most age ranges, likely ages 7-50.
 
 ### 1.3 Game Summary
 My game will be a 2D scrolling platformer that explores mental health issues. In the game, you will play as a person suffering from various mental health problems and you must explore their subconsciousness to help them. You must navigate through obstacles and puzzles to relieve mental strain on the character. The game should be in a pixel art style to represent the disconnection from reality, and its core mechanic is to explore your vices and resolve them.
@@ -112,17 +112,17 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 3.4 Game Loop
 | Stage | Description |
 |---|---|
-| Start / Initialisation | |
-| Core Loop | |
-| Win / End State | |
-| Restart | |
+| Start / Initialisation |The game is started when the player clicks the START button in the main menu.|
+| Core Loop |The core loop is a 2D side scrolling platformer where the player has to traverse along and encounter the boss to open the exit.|
+| Win / End State |The player wins if they reach complete the boss minigame and open the exit.|
+| Restart |The game is restarted every time the player loses all their lives.|
 
 ### 3.5 Scoring & Progression
 | Element | Description |
 |---|---|
-| Scoring System | |
-| Difficulty Progression | |
-| Unlockables / Levels | |
+| Scoring System |N/A|
+| Difficulty Progression |N/A|
+| Unlockables / Levels |N/A|
 
 ---
 
@@ -143,9 +143,7 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 
 | Cut Scene | Trigger | Description | Screenshot / Still |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+|N/A|N/A|N/A|N/A|
 
 ---
 
@@ -175,7 +173,6 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |---|---|---|---|
 |NoFriction|Player|It removes the friction from collisions|![Shader Name](./docs/Screenshots/NoFriction.png)|
 |OrbMaterial|Orb|Gives the orbs a texture.|![Shader Name](./docs/Screenshots/OrbMaterial.png)|
-| | | | |
 
 ---
 
@@ -189,8 +186,6 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | Description | Screenshot |
 |---|---|
 |Parallax Background|![Parallax Background](./docs/Screenshots/ParallaxBG.png)|
-| | |
-| | |
 
 ---
 
@@ -199,8 +194,9 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 5.1 Music
 | Track | Scene / Trigger | Source / Composer |
 |---|---|---|
-|WhitePalace|Main Menu|Composed by Christopher Larkin in 'Hollow Knight'.|
-|Confined|Anxiety Level|Composed by Mekbok in 'The Foundation'.|
+|WhitePalace|Main Menu|Composed by Christopher Larkin in 'Hollow Knight'|
+|Confined|Anxiety Level|Composed by Mekbok in 'The Foundation'|
+|Search Party|Anxiety Level|Composed by NoLongerNull in 'Pressure'|
 
 ### 5.2 Sound Effects
 | Sound Effect | Trigger | Source |
@@ -213,8 +209,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 5.3 Audio Implementation
 | Feature | Description |
 |---|---|
-| Audio Mixer / Groups | |
-| Spatial / 3D Audio | |
+| Audio Mixer / Groups |N/A|
+| Spatial / 3D Audio |N/A|
 | Dynamic Audio |Music is changed in stages in the anxiety boss stage.|
 
 ---
@@ -248,18 +244,17 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 7.2 Level / Environment Screenshots
 | Level / Area | Description | Screenshot |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+|Anxiety Level|The main part of the level that the player traverses through.|![Level Name](./docs/Screenshots/MainLevel.png)|
+|Anxiety Boss Stage|The final part of the level that the player has to get through to beat the game.|![Level Name](./docs/Screenshots/BossStage.png)|
 
 > Add screenshot images using: `![Level Name](./docs/Screenshots/level_name.png)`
 
 ### 7.3 Scene Management
 | Feature | Description |
 |---|---|
-| Scene Loading Method | |
-| Persistent Data Between Scenes | |
-| Scene Transition Effects | |
+| Scene Loading Method |N/A|
+| Persistent Data Between Scenes |N/A|
+| Scene Transition Effects |N/A|
 
 ---
 
@@ -277,16 +272,16 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 8.2 Key Algorithms / Logic
 | Feature | Script | Description |
 |---|---|---|
-|Damage| | |
-| | | |
-| | | |
+|Health|HealthSystem.cs|The global health component, where any game object can take or give lives.|
+|Adjust To Fit|AdjustToFit.cs|Makes the game object scale relative to the screen, ensuring that scale maintains across device sizes.|
+|Assign Game Object|AssignGameObject.cs|Allows tiles to contain one or more game objects in their position.|
 
 ### 8.3 Design Patterns Used
 | Pattern | Where Applied | Justification |
 |---|---|---|
-|Audio Manager|Applied in multiple game objects to refer back to the Audio Manager|Referring back to the Audio Manager allows you to play sounds from any game object.|
-| | | |
-| | | |
+|Audio Manager|Applied in multiple game objects to refer back to the Audio Manager.|Referring back to the Audio Manager allows you to play sounds from any game object.|
+|Game Object Brush|Applied in the OrbsTilemap.|Can be used to draw orbs efficiently across the level.|
+|Orb Counter|Applied in the Canvas.|Counts the number of orbs, this is useful to both the player and scripts as orbs can be deposited for lives.|
 
 ---
 
@@ -314,9 +309,10 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 10.1 Visual Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+|Orb|.piskel|Charlotte H|None given|https://drive.google.com/file/d/1ivN-5GtWZXTwE2MXcCEkPBfIyKBYzdTT/view?usp=sharing|Orb collectible in the main level.|
+|Blocks Anxiety|.piskel|Charlotte H|None given|https://drive.google.com/file/d/1Ze-rFlKQJq8iocY2jszMQ2falga8uNAC/view?usp=sharing|Used for the main tilemap of the level.|
+|Gabriel.trial|.gif|Charlotte H|None given|https://drive.google.com/file/d/1UIognkG2uD3u5ND6oWDU_1vcKoi83fh7/view?usp=sharing|Used as the main character / player.|
+|AnxietyLvlLayers|.piskel|Connor K|None given|https://drive.google.com/file/d/18Gmo0lkWmWmkJ3ha312o25eR61R4DVfJ/view?usp=sharing|Used for the parallax background of the main level.|
 
 ### 10.2 Audio Assets
 | Asset Name | Type | Creator / Source | Licence | URL | Used For |
@@ -331,21 +327,17 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 ### 10.3 Scripts & Code Snippets
 | Script / Snippet | Source | Licence | URL | Used For | Changes Made |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
+|N/A|N/A|N/A|N/A|N/A|N/A|
 
 ### 10.4 Unity Packages & Plugins
 | Package Name | Version | Source | Licence | URL | Purpose |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+|Simblend|1.0|Github|None given|https://github.com/SimblendGames/Simblend-Editor|Editing audio within the Unity editor.|
 
 ### 10.5 Fonts
 | Font Name | Creator / Source | Licence | URL |
 |---|---|---|---|
 |Special Gothic Condensed One|Alistair McCready - Google Fonts|Commercial or other use (OFL Version 1.1)|https://fonts.google.com/specimen/Special+Gothic+Condensed+One?preview.script=Latn|
-| | | | |
 
 ---
 
@@ -356,8 +348,6 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 | 1 |Heart animations were difficult to implement because they were clones. This made them hard to animate in the script.|I did some debugging and found the root cause of why the heart animations were not being applied which was some issues involving the trigger in the animator and its behaviour.|
 | 2 |The main menu buttons created were not fully scaled so they behaved strangely with the interactable buttons.|I added the button as a separate game object, making it a child of the button which allowed me to freely change the scale.|
 | 3 |Lighting was difficult to integrate at first because the shadows were not applied to the tilemap which is what was being used to generate the level.|I added a shadow caster script to the tilemap and it was able to cast shadows properly.|
-| 4 || |
-| 5 | | |
 
 ---
 
@@ -373,8 +363,8 @@ My game will be a 2D scrolling platformer that explores mental health issues. In
 |---|---|
 | **Branch Name** | `main` |
 | **Purpose** | Stable, releasable version of the game |
-| **Merged From** | |
-| **Final Commit** | |
+| **Merged From** |Main|
+| **Final Commit** |feature: complete documentation|
 
 ---
 
@@ -400,12 +390,7 @@ I implemented the parallax background to give the game a 3D effect in a 2D space
 #### Problems Encountered & Resolved
 | Problem | Resolution |
 |---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-<!-- Add a screenshot of the feature working -->
-> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
+|N/A|N/A|
 
 ---
 
@@ -435,102 +420,6 @@ The level was a bit plain and barren so I added enemies, obstacles, orb depositi
 |Heart deposit was not working properly.|Changed the animation settings for the heart deposit function.|
 |Anchor minigame spinner was not scaled properly.|Adjust the scaling to be a 1:1 ratio.|
 
-#### Screenshot / Evidence
-> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
-
----
-
-### Branch 4 — `feature/`
-
-| Field | Detail |
-|---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
-
-#### What Was Built
-
-
-#### Key Commits
-| Commit Message | What Changed |
-|---|---|
-| | |
-| | |
-| | |
-
-#### Problems Encountered & Resolved
-| Problem | Resolution |
-|---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
-
----
-
-### Branch 5 — `feature/`
-
-| Field | Detail |
-|---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
-
-#### What Was Built
-
-
-#### Key Commits
-| Commit Message | What Changed |
-|---|---|
-| | |
-| | |
-| | |
-
-#### Problems Encountered & Resolved
-| Problem | Resolution |
-|---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
-
----
-
-### Branch 6 — `feature/`
-
-| Field | Detail |
-|---|---|
-| **Branch Name** | |
-| **Feature Developed** | |
-| **Merged Into** | |
-| **Date Started** | |
-| **Date Merged** | |
-
-#### What Was Built
-
-
-#### Key Commits
-| Commit Message | What Changed |
-|---|---|
-| | |
-| | |
-| | |
-
-#### Problems Encountered & Resolved
-| Problem | Resolution |
-|---|---|
-| | |
-| | |
-
-#### Screenshot / Evidence
-> `![Feature Name](./docs/Screenshots/branch_feature_name.png)`
-
 ---
 
 ### Branch Development Overview
@@ -539,12 +428,9 @@ The level was a bit plain and barren so I added enemies, obstacles, orb depositi
 
 | Branch Name | Feature | Date Started | Date Merged | Status |
 |---|---|---|---|---|
-| `main` | Stable release | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
-| `feature/` | | | | |
+| `main` | Stable release |May 14|Sep 23|Complete|
+| `feature/parallax-bg` |Parallax Background|Jul 23|Aug 12|Complete|
+| `feature/level-overhaul` |Improved Level Mechanics|Sep 11|Sep 23|Complete|
 
 ---
 
